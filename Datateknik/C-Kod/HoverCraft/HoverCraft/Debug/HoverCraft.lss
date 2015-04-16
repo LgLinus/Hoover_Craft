@@ -1,0 +1,1131 @@
+
+HoverCraft.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000738  00080000  00080000  00008000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .relocate     00000438  20070000  00080738  00010000  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000190  20070438  00080b70  00010438  2**2
+                  ALLOC
+  3 .stack        00002000  200705c8  00080d00  00010438  2**0
+                  ALLOC
+  4 .ARM.attributes 00000029  00000000  00000000  00010438  2**0
+                  CONTENTS, READONLY
+  5 .comment      00000071  00000000  00000000  00010461  2**0
+                  CONTENTS, READONLY
+  6 .debug_info   00009156  00000000  00000000  000104d2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000018b9  00000000  00000000  00019628  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_loc    000049df  00000000  00000000  0001aee1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_aranges 000005c0  00000000  00000000  0001f8c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 000004d0  00000000  00000000  0001fe80  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_macro  00003643  00000000  00000000  00020350  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_line   00006af9  00000000  00000000  00023993  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_str    0006d7c3  00000000  00000000  0002a48c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_frame  00000d9c  00000000  00000000  00097c50  2**2
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00080000 <_sfixed>:
+   80000:	200725c8 	.word	0x200725c8
+   80004:	00080509 	.word	0x00080509
+   80008:	00080505 	.word	0x00080505
+   8000c:	00080505 	.word	0x00080505
+   80010:	00080505 	.word	0x00080505
+   80014:	00080505 	.word	0x00080505
+   80018:	00080505 	.word	0x00080505
+	...
+   8002c:	00080205 	.word	0x00080205
+   80030:	00080505 	.word	0x00080505
+   80034:	00000000 	.word	0x00000000
+   80038:	0008023d 	.word	0x0008023d
+   8003c:	00080279 	.word	0x00080279
+   80040:	00080505 	.word	0x00080505
+   80044:	00080505 	.word	0x00080505
+   80048:	00080505 	.word	0x00080505
+   8004c:	00080505 	.word	0x00080505
+   80050:	00080505 	.word	0x00080505
+   80054:	00080505 	.word	0x00080505
+   80058:	00080505 	.word	0x00080505
+   8005c:	00080505 	.word	0x00080505
+   80060:	00080505 	.word	0x00080505
+   80064:	00080505 	.word	0x00080505
+   80068:	00000000 	.word	0x00000000
+   8006c:	000804b5 	.word	0x000804b5
+   80070:	000804c9 	.word	0x000804c9
+   80074:	000804dd 	.word	0x000804dd
+   80078:	000804f1 	.word	0x000804f1
+	...
+   80084:	00080505 	.word	0x00080505
+   80088:	00080505 	.word	0x00080505
+   8008c:	00080505 	.word	0x00080505
+   80090:	00080505 	.word	0x00080505
+   80094:	00080505 	.word	0x00080505
+   80098:	00080505 	.word	0x00080505
+   8009c:	00080505 	.word	0x00080505
+   800a0:	00080505 	.word	0x00080505
+   800a4:	00000000 	.word	0x00000000
+   800a8:	00080505 	.word	0x00080505
+   800ac:	00080505 	.word	0x00080505
+   800b0:	00080505 	.word	0x00080505
+   800b4:	00080505 	.word	0x00080505
+   800b8:	00080505 	.word	0x00080505
+   800bc:	00080505 	.word	0x00080505
+   800c0:	00080505 	.word	0x00080505
+   800c4:	00080505 	.word	0x00080505
+   800c8:	00080505 	.word	0x00080505
+   800cc:	00080505 	.word	0x00080505
+   800d0:	00080505 	.word	0x00080505
+   800d4:	00080505 	.word	0x00080505
+   800d8:	00080505 	.word	0x00080505
+   800dc:	00080505 	.word	0x00080505
+   800e0:	00080505 	.word	0x00080505
+   800e4:	00080505 	.word	0x00080505
+   800e8:	00080505 	.word	0x00080505
+   800ec:	00080505 	.word	0x00080505
+   800f0:	00080505 	.word	0x00080505
+
+000800f4 <deregister_tm_clones>:
+   800f4:	b508      	push	{r3, lr}
+   800f6:	4805      	ldr	r0, [pc, #20]	; (8010c <deregister_tm_clones+0x18>)
+   800f8:	4b05      	ldr	r3, [pc, #20]	; (80110 <deregister_tm_clones+0x1c>)
+   800fa:	1a1b      	subs	r3, r3, r0
+   800fc:	2b06      	cmp	r3, #6
+   800fe:	d800      	bhi.n	80102 <deregister_tm_clones+0xe>
+   80100:	bd08      	pop	{r3, pc}
+   80102:	4b04      	ldr	r3, [pc, #16]	; (80114 <deregister_tm_clones+0x20>)
+   80104:	2b00      	cmp	r3, #0
+   80106:	d0fb      	beq.n	80100 <deregister_tm_clones+0xc>
+   80108:	4798      	blx	r3
+   8010a:	e7f9      	b.n	80100 <deregister_tm_clones+0xc>
+   8010c:	00080738 	.word	0x00080738
+   80110:	0008073b 	.word	0x0008073b
+   80114:	00000000 	.word	0x00000000
+
+00080118 <register_tm_clones>:
+   80118:	b508      	push	{r3, lr}
+   8011a:	4807      	ldr	r0, [pc, #28]	; (80138 <register_tm_clones+0x20>)
+   8011c:	4b07      	ldr	r3, [pc, #28]	; (8013c <register_tm_clones+0x24>)
+   8011e:	1a1b      	subs	r3, r3, r0
+   80120:	109b      	asrs	r3, r3, #2
+   80122:	eb03 73d3 	add.w	r3, r3, r3, lsr #31
+   80126:	1059      	asrs	r1, r3, #1
+   80128:	d100      	bne.n	8012c <register_tm_clones+0x14>
+   8012a:	bd08      	pop	{r3, pc}
+   8012c:	4a04      	ldr	r2, [pc, #16]	; (80140 <register_tm_clones+0x28>)
+   8012e:	2a00      	cmp	r2, #0
+   80130:	d0fb      	beq.n	8012a <register_tm_clones+0x12>
+   80132:	4790      	blx	r2
+   80134:	e7f9      	b.n	8012a <register_tm_clones+0x12>
+   80136:	bf00      	nop
+   80138:	00080738 	.word	0x00080738
+   8013c:	00080738 	.word	0x00080738
+   80140:	00000000 	.word	0x00000000
+
+00080144 <__do_global_dtors_aux>:
+   80144:	b510      	push	{r4, lr}
+   80146:	4c06      	ldr	r4, [pc, #24]	; (80160 <__do_global_dtors_aux+0x1c>)
+   80148:	7823      	ldrb	r3, [r4, #0]
+   8014a:	b943      	cbnz	r3, 8015e <__do_global_dtors_aux+0x1a>
+   8014c:	f7ff ffd2 	bl	800f4 <deregister_tm_clones>
+   80150:	4b04      	ldr	r3, [pc, #16]	; (80164 <__do_global_dtors_aux+0x20>)
+   80152:	b113      	cbz	r3, 8015a <__do_global_dtors_aux+0x16>
+   80154:	4804      	ldr	r0, [pc, #16]	; (80168 <__do_global_dtors_aux+0x24>)
+   80156:	f3af 8000 	nop.w
+   8015a:	2301      	movs	r3, #1
+   8015c:	7023      	strb	r3, [r4, #0]
+   8015e:	bd10      	pop	{r4, pc}
+   80160:	20070438 	.word	0x20070438
+   80164:	00000000 	.word	0x00000000
+   80168:	00080738 	.word	0x00080738
+
+0008016c <frame_dummy>:
+   8016c:	b508      	push	{r3, lr}
+   8016e:	4b08      	ldr	r3, [pc, #32]	; (80190 <frame_dummy+0x24>)
+   80170:	b11b      	cbz	r3, 8017a <frame_dummy+0xe>
+   80172:	4808      	ldr	r0, [pc, #32]	; (80194 <frame_dummy+0x28>)
+   80174:	4908      	ldr	r1, [pc, #32]	; (80198 <frame_dummy+0x2c>)
+   80176:	f3af 8000 	nop.w
+   8017a:	4808      	ldr	r0, [pc, #32]	; (8019c <frame_dummy+0x30>)
+   8017c:	6803      	ldr	r3, [r0, #0]
+   8017e:	b113      	cbz	r3, 80186 <frame_dummy+0x1a>
+   80180:	4b07      	ldr	r3, [pc, #28]	; (801a0 <frame_dummy+0x34>)
+   80182:	b103      	cbz	r3, 80186 <frame_dummy+0x1a>
+   80184:	4798      	blx	r3
+   80186:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+   8018a:	f7ff bfc5 	b.w	80118 <register_tm_clones>
+   8018e:	bf00      	nop
+   80190:	00000000 	.word	0x00000000
+   80194:	00080738 	.word	0x00080738
+   80198:	2007043c 	.word	0x2007043c
+   8019c:	00080738 	.word	0x00080738
+   801a0:	00000000 	.word	0x00000000
+
+000801a4 <UnityBegin>:
+}
+
+//-----------------------------------------------
+void UnityBegin(const char* filename)
+{
+    Unity.TestFile = filename;
+   801a4:	4b05      	ldr	r3, [pc, #20]	; (801bc <UnityBegin+0x18>)
+   801a6:	6018      	str	r0, [r3, #0]
+    Unity.CurrentTestName = NULL;
+   801a8:	2200      	movs	r2, #0
+   801aa:	605a      	str	r2, [r3, #4]
+    Unity.CurrentTestLineNumber = 0;
+   801ac:	609a      	str	r2, [r3, #8]
+    Unity.NumberOfTests = 0;
+   801ae:	60da      	str	r2, [r3, #12]
+    Unity.TestFailures = 0;
+   801b0:	611a      	str	r2, [r3, #16]
+    Unity.TestIgnores = 0;
+   801b2:	615a      	str	r2, [r3, #20]
+    Unity.CurrentTestFailed = 0;
+   801b4:	619a      	str	r2, [r3, #24]
+    Unity.CurrentTestIgnored = 0;
+   801b6:	61da      	str	r2, [r3, #28]
+   801b8:	4770      	bx	lr
+   801ba:	bf00      	nop
+   801bc:	2007054c 	.word	0x2007054c
+
+000801c0 <vListInsertEnd>:
+
+	/* Insert a new list item into pxList, but rather than sort the list,
+	makes the new list item the last item to be removed by a call to
+	pvListGetOwnerOfNextEntry.  This means it has to be the item pointed to by
+	the pxIndex member. */
+	pxIndex = pxList->pxIndex;
+   801c0:	6843      	ldr	r3, [r0, #4]
+
+	pxNewListItem->pxNext = pxIndex->pxNext;
+   801c2:	685a      	ldr	r2, [r3, #4]
+   801c4:	604a      	str	r2, [r1, #4]
+	pxNewListItem->pxPrevious = pxList->pxIndex;
+   801c6:	6842      	ldr	r2, [r0, #4]
+   801c8:	608a      	str	r2, [r1, #8]
+	pxIndex->pxNext->pxPrevious = ( volatile xListItem * ) pxNewListItem;
+   801ca:	685a      	ldr	r2, [r3, #4]
+   801cc:	6091      	str	r1, [r2, #8]
+	pxIndex->pxNext = ( volatile xListItem * ) pxNewListItem;
+   801ce:	6059      	str	r1, [r3, #4]
+	pxList->pxIndex = ( volatile xListItem * ) pxNewListItem;
+   801d0:	6041      	str	r1, [r0, #4]
+
+	/* Remember which list the item is in. */
+	pxNewListItem->pvContainer = ( void * ) pxList;
+   801d2:	6108      	str	r0, [r1, #16]
+
+	( pxList->uxNumberOfItems )++;
+   801d4:	6803      	ldr	r3, [r0, #0]
+   801d6:	3301      	adds	r3, #1
+   801d8:	6003      	str	r3, [r0, #0]
+   801da:	4770      	bx	lr
+
+000801dc <uxListRemove>:
+
+unsigned portBASE_TYPE uxListRemove( xListItem *pxItemToRemove )
+{
+xList * pxList;
+
+	pxItemToRemove->pxNext->pxPrevious = pxItemToRemove->pxPrevious;
+   801dc:	6843      	ldr	r3, [r0, #4]
+   801de:	6882      	ldr	r2, [r0, #8]
+   801e0:	609a      	str	r2, [r3, #8]
+	pxItemToRemove->pxPrevious->pxNext = pxItemToRemove->pxNext;
+   801e2:	6883      	ldr	r3, [r0, #8]
+   801e4:	6842      	ldr	r2, [r0, #4]
+   801e6:	605a      	str	r2, [r3, #4]
+
+	/* The list item knows which list it is in.  Obtain the list from the list
+	item. */
+	pxList = ( xList * ) pxItemToRemove->pvContainer;
+   801e8:	6903      	ldr	r3, [r0, #16]
+
+	/* Make sure the index is left pointing to a valid item. */
+	if( pxList->pxIndex == pxItemToRemove )
+   801ea:	685a      	ldr	r2, [r3, #4]
+   801ec:	4282      	cmp	r2, r0
+	{
+		pxList->pxIndex = pxItemToRemove->pxPrevious;
+   801ee:	bf04      	itt	eq
+   801f0:	6882      	ldreq	r2, [r0, #8]
+   801f2:	605a      	streq	r2, [r3, #4]
+	}
+
+	pxItemToRemove->pvContainer = NULL;
+   801f4:	2200      	movs	r2, #0
+   801f6:	6102      	str	r2, [r0, #16]
+	( pxList->uxNumberOfItems )--;
+   801f8:	681a      	ldr	r2, [r3, #0]
+   801fa:	3a01      	subs	r2, #1
+   801fc:	601a      	str	r2, [r3, #0]
+
+	return pxList->uxNumberOfItems;
+   801fe:	6818      	ldr	r0, [r3, #0]
+}
+   80200:	4770      	bx	lr
+   80202:	bf00      	nop
+
+00080204 <SVC_Handler>:
+}
+/*-----------------------------------------------------------*/
+
+__attribute__ (( naked )) void SVC_Handler( void )
+{
+	__asm volatile (
+   80204:	4b06      	ldr	r3, [pc, #24]	; (80220 <pxCurrentTCBConst2>)
+   80206:	6819      	ldr	r1, [r3, #0]
+   80208:	6808      	ldr	r0, [r1, #0]
+   8020a:	e8b0 0ff0 	ldmia.w	r0!, {r4, r5, r6, r7, r8, r9, sl, fp}
+   8020e:	f380 8809 	msr	PSP, r0
+   80212:	f04f 0000 	mov.w	r0, #0
+   80216:	f380 8811 	msr	BASEPRI, r0
+   8021a:	f04e 0e0d 	orr.w	lr, lr, #13
+   8021e:	4770      	bx	lr
+
+00080220 <pxCurrentTCBConst2>:
+   80220:	200704c8 	.word	0x200704c8
+
+00080224 <ulPortSetInterruptMask>:
+}
+/*-----------------------------------------------------------*/
+
+__attribute__(( naked )) unsigned long ulPortSetInterruptMask( void )
+{
+	__asm volatile														\
+   80224:	f3ef 8011 	mrs	r0, BASEPRI
+   80228:	f04f 01a0 	mov.w	r1, #160	; 0xa0
+   8022c:	f381 8811 	msr	BASEPRI, r1
+   80230:	4770      	bx	lr
+	);
+
+	/* This return will not be reached but is necessary to prevent compiler
+	warnings. */
+	return 0;
+}
+   80232:	2000      	movs	r0, #0
+
+00080234 <vPortClearInterruptMask>:
+/*-----------------------------------------------------------*/
+
+__attribute__(( naked )) void vPortClearInterruptMask( unsigned long ulNewMaskValue )
+{
+	__asm volatile													\
+   80234:	f380 8811 	msr	BASEPRI, r0
+   80238:	4770      	bx	lr
+   8023a:	bf00      	nop
+
+0008023c <PendSV_Handler>:
+
+__attribute__(( naked )) void PendSV_Handler( void )
+{
+	/* This is a naked function. */
+
+	__asm volatile
+   8023c:	f3ef 8009 	mrs	r0, PSP
+   80240:	4b0c      	ldr	r3, [pc, #48]	; (80274 <pxCurrentTCBConst>)
+   80242:	681a      	ldr	r2, [r3, #0]
+   80244:	e920 0ff0 	stmdb	r0!, {r4, r5, r6, r7, r8, r9, sl, fp}
+   80248:	6010      	str	r0, [r2, #0]
+   8024a:	e92d 4008 	stmdb	sp!, {r3, lr}
+   8024e:	f04f 00a0 	mov.w	r0, #160	; 0xa0
+   80252:	f380 8811 	msr	BASEPRI, r0
+   80256:	f000 f8b5 	bl	803c4 <vTaskSwitchContext>
+   8025a:	f04f 0000 	mov.w	r0, #0
+   8025e:	f380 8811 	msr	BASEPRI, r0
+   80262:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+   80266:	6819      	ldr	r1, [r3, #0]
+   80268:	6808      	ldr	r0, [r1, #0]
+   8026a:	e8b0 0ff0 	ldmia.w	r0!, {r4, r5, r6, r7, r8, r9, sl, fp}
+   8026e:	f380 8809 	msr	PSP, r0
+   80272:	4770      	bx	lr
+
+00080274 <pxCurrentTCBConst>:
+   80274:	200704c8 	.word	0x200704c8
+
+00080278 <SysTick_Handler>:
+	);
+}
+/*-----------------------------------------------------------*/
+
+void SysTick_Handler( void )
+{
+   80278:	b508      	push	{r3, lr}
+	/* If using preemption, also force a context switch. */
+	#if configUSE_PREEMPTION == 1
+		portNVIC_INT_CTRL_REG = portNVIC_PENDSVSET_BIT;
+   8027a:	f04f 5280 	mov.w	r2, #268435456	; 0x10000000
+   8027e:	4b05      	ldr	r3, [pc, #20]	; (80294 <SysTick_Handler+0x1c>)
+   80280:	601a      	str	r2, [r3, #0]
+	to generate the tick interrupt. */
+	#if configUSE_TICKLESS_IDLE == 1
+		portNVIC_SYSTICK_LOAD_REG = ulTimerReloadValueForOneTick;
+	#endif
+
+	( void ) portSET_INTERRUPT_MASK_FROM_ISR();
+   80282:	4b05      	ldr	r3, [pc, #20]	; (80298 <SysTick_Handler+0x20>)
+   80284:	4798      	blx	r3
+	{
+		vTaskIncrementTick();
+   80286:	4b05      	ldr	r3, [pc, #20]	; (8029c <SysTick_Handler+0x24>)
+   80288:	4798      	blx	r3
+	}
+	portCLEAR_INTERRUPT_MASK_FROM_ISR( 0 );
+   8028a:	2000      	movs	r0, #0
+   8028c:	4b04      	ldr	r3, [pc, #16]	; (802a0 <SysTick_Handler+0x28>)
+   8028e:	4798      	blx	r3
+   80290:	bd08      	pop	{r3, pc}
+   80292:	bf00      	nop
+   80294:	e000ed04 	.word	0xe000ed04
+   80298:	00080225 	.word	0x00080225
+   8029c:	000802a5 	.word	0x000802a5
+   802a0:	00080235 	.word	0x00080235
+
+000802a4 <vTaskIncrementTick>:
+ * SCHEDULER INTERNALS AVAILABLE FOR PORTING PURPOSES
+ * documented in task.h
+ *----------------------------------------------------------*/
+
+void vTaskIncrementTick( void )
+{
+   802a4:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+
+	/* Called by the portable layer each time a tick interrupt occurs.
+	Increments the tick then checks to see if the new tick value will cause any
+	tasks to be unblocked. */
+	traceTASK_INCREMENT_TICK( xTickCount );
+	if( uxSchedulerSuspended == ( unsigned portBASE_TYPE ) pdFALSE )
+   802a8:	4b3a      	ldr	r3, [pc, #232]	; (80394 <vTaskIncrementTick+0xf0>)
+   802aa:	681b      	ldr	r3, [r3, #0]
+   802ac:	2b00      	cmp	r3, #0
+   802ae:	d16b      	bne.n	80388 <vTaskIncrementTick+0xe4>
+	{
+		++xTickCount;
+   802b0:	4b39      	ldr	r3, [pc, #228]	; (80398 <vTaskIncrementTick+0xf4>)
+   802b2:	681a      	ldr	r2, [r3, #0]
+   802b4:	3201      	adds	r2, #1
+   802b6:	601a      	str	r2, [r3, #0]
+		if( xTickCount == ( portTickType ) 0U )
+   802b8:	681b      	ldr	r3, [r3, #0]
+   802ba:	bb03      	cbnz	r3, 802fe <vTaskIncrementTick+0x5a>
+			xList *pxTemp;
+
+			/* Tick count has overflowed so we need to swap the delay lists.
+			If there are any items in pxDelayedTaskList here then there is
+			an error! */
+			configASSERT( ( listLIST_IS_EMPTY( pxDelayedTaskList ) ) );
+   802bc:	4b37      	ldr	r3, [pc, #220]	; (8039c <vTaskIncrementTick+0xf8>)
+   802be:	681b      	ldr	r3, [r3, #0]
+   802c0:	681b      	ldr	r3, [r3, #0]
+   802c2:	b11b      	cbz	r3, 802cc <vTaskIncrementTick+0x28>
+   802c4:	4b36      	ldr	r3, [pc, #216]	; (803a0 <vTaskIncrementTick+0xfc>)
+   802c6:	4798      	blx	r3
+   802c8:	bf00      	nop
+   802ca:	e7fd      	b.n	802c8 <vTaskIncrementTick+0x24>
+
+			pxTemp = pxDelayedTaskList;
+   802cc:	4b33      	ldr	r3, [pc, #204]	; (8039c <vTaskIncrementTick+0xf8>)
+   802ce:	6819      	ldr	r1, [r3, #0]
+			pxDelayedTaskList = pxOverflowDelayedTaskList;
+   802d0:	4a34      	ldr	r2, [pc, #208]	; (803a4 <vTaskIncrementTick+0x100>)
+   802d2:	6810      	ldr	r0, [r2, #0]
+   802d4:	6018      	str	r0, [r3, #0]
+			pxOverflowDelayedTaskList = pxTemp;
+   802d6:	6011      	str	r1, [r2, #0]
+			xNumOfOverflows++;
+   802d8:	4a33      	ldr	r2, [pc, #204]	; (803a8 <vTaskIncrementTick+0x104>)
+   802da:	6811      	ldr	r1, [r2, #0]
+   802dc:	3101      	adds	r1, #1
+   802de:	6011      	str	r1, [r2, #0]
+
+			if( listLIST_IS_EMPTY( pxDelayedTaskList ) != pdFALSE )
+   802e0:	681b      	ldr	r3, [r3, #0]
+   802e2:	681b      	ldr	r3, [r3, #0]
+   802e4:	b923      	cbnz	r3, 802f0 <vTaskIncrementTick+0x4c>
+				/* The new current delayed list is empty.  Set
+				xNextTaskUnblockTime to the maximum possible value so it is
+				extremely unlikely that the
+				if( xTickCount >= xNextTaskUnblockTime ) test will pass until
+				there is an item in the delayed list. */
+				xNextTaskUnblockTime = portMAX_DELAY;
+   802e6:	f04f 32ff 	mov.w	r2, #4294967295
+   802ea:	4b30      	ldr	r3, [pc, #192]	; (803ac <vTaskIncrementTick+0x108>)
+   802ec:	601a      	str	r2, [r3, #0]
+   802ee:	e006      	b.n	802fe <vTaskIncrementTick+0x5a>
+			{
+				/* The new current delayed list is not empty, get the value of
+				the item at the head of the delayed list.  This is the time at
+				which the task at the head of the delayed list should be removed
+				from the Blocked state. */
+				pxTCB = ( tskTCB * ) listGET_OWNER_OF_HEAD_ENTRY( pxDelayedTaskList );
+   802f0:	4b2a      	ldr	r3, [pc, #168]	; (8039c <vTaskIncrementTick+0xf8>)
+   802f2:	681b      	ldr	r3, [r3, #0]
+   802f4:	68db      	ldr	r3, [r3, #12]
+   802f6:	68db      	ldr	r3, [r3, #12]
+				xNextTaskUnblockTime = listGET_LIST_ITEM_VALUE( &( pxTCB->xGenericListItem ) );
+   802f8:	685a      	ldr	r2, [r3, #4]
+   802fa:	4b2c      	ldr	r3, [pc, #176]	; (803ac <vTaskIncrementTick+0x108>)
+   802fc:	601a      	str	r2, [r3, #0]
+			}
+		}
+
+		/* See if this tick has made a timeout expire. */
+		prvCheckDelayedTasks();
+   802fe:	4b26      	ldr	r3, [pc, #152]	; (80398 <vTaskIncrementTick+0xf4>)
+   80300:	681a      	ldr	r2, [r3, #0]
+   80302:	4b2a      	ldr	r3, [pc, #168]	; (803ac <vTaskIncrementTick+0x108>)
+   80304:	681b      	ldr	r3, [r3, #0]
+   80306:	429a      	cmp	r2, r3
+   80308:	d342      	bcc.n	80390 <vTaskIncrementTick+0xec>
+   8030a:	4b24      	ldr	r3, [pc, #144]	; (8039c <vTaskIncrementTick+0xf8>)
+   8030c:	681b      	ldr	r3, [r3, #0]
+   8030e:	681b      	ldr	r3, [r3, #0]
+   80310:	b14b      	cbz	r3, 80326 <vTaskIncrementTick+0x82>
+   80312:	4b22      	ldr	r3, [pc, #136]	; (8039c <vTaskIncrementTick+0xf8>)
+   80314:	681b      	ldr	r3, [r3, #0]
+   80316:	68db      	ldr	r3, [r3, #12]
+   80318:	68dc      	ldr	r4, [r3, #12]
+   8031a:	6863      	ldr	r3, [r4, #4]
+   8031c:	4a1e      	ldr	r2, [pc, #120]	; (80398 <vTaskIncrementTick+0xf4>)
+   8031e:	6812      	ldr	r2, [r2, #0]
+   80320:	4293      	cmp	r3, r2
+   80322:	d913      	bls.n	8034c <vTaskIncrementTick+0xa8>
+   80324:	e00e      	b.n	80344 <vTaskIncrementTick+0xa0>
+   80326:	f04f 32ff 	mov.w	r2, #4294967295
+   8032a:	4b20      	ldr	r3, [pc, #128]	; (803ac <vTaskIncrementTick+0x108>)
+   8032c:	601a      	str	r2, [r3, #0]
+   8032e:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   80332:	4b1a      	ldr	r3, [pc, #104]	; (8039c <vTaskIncrementTick+0xf8>)
+   80334:	681b      	ldr	r3, [r3, #0]
+   80336:	68db      	ldr	r3, [r3, #12]
+   80338:	68dc      	ldr	r4, [r3, #12]
+   8033a:	6863      	ldr	r3, [r4, #4]
+   8033c:	4a16      	ldr	r2, [pc, #88]	; (80398 <vTaskIncrementTick+0xf4>)
+   8033e:	6812      	ldr	r2, [r2, #0]
+   80340:	4293      	cmp	r3, r2
+   80342:	d907      	bls.n	80354 <vTaskIncrementTick+0xb0>
+   80344:	4a19      	ldr	r2, [pc, #100]	; (803ac <vTaskIncrementTick+0x108>)
+   80346:	6013      	str	r3, [r2, #0]
+   80348:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   8034c:	4e18      	ldr	r6, [pc, #96]	; (803b0 <vTaskIncrementTick+0x10c>)
+   8034e:	4f19      	ldr	r7, [pc, #100]	; (803b4 <vTaskIncrementTick+0x110>)
+   80350:	f8df 806c 	ldr.w	r8, [pc, #108]	; 803c0 <vTaskIncrementTick+0x11c>
+   80354:	1d25      	adds	r5, r4, #4
+   80356:	4628      	mov	r0, r5
+   80358:	47b0      	blx	r6
+   8035a:	6aa3      	ldr	r3, [r4, #40]	; 0x28
+   8035c:	b113      	cbz	r3, 80364 <vTaskIncrementTick+0xc0>
+   8035e:	f104 0018 	add.w	r0, r4, #24
+   80362:	47b0      	blx	r6
+   80364:	6ae3      	ldr	r3, [r4, #44]	; 0x2c
+   80366:	683a      	ldr	r2, [r7, #0]
+   80368:	4293      	cmp	r3, r2
+   8036a:	bf88      	it	hi
+   8036c:	603b      	strhi	r3, [r7, #0]
+   8036e:	eb03 0083 	add.w	r0, r3, r3, lsl #2
+   80372:	eb08 0080 	add.w	r0, r8, r0, lsl #2
+   80376:	4629      	mov	r1, r5
+   80378:	4b0f      	ldr	r3, [pc, #60]	; (803b8 <vTaskIncrementTick+0x114>)
+   8037a:	4798      	blx	r3
+   8037c:	4b07      	ldr	r3, [pc, #28]	; (8039c <vTaskIncrementTick+0xf8>)
+   8037e:	681b      	ldr	r3, [r3, #0]
+   80380:	681b      	ldr	r3, [r3, #0]
+   80382:	2b00      	cmp	r3, #0
+   80384:	d1d5      	bne.n	80332 <vTaskIncrementTick+0x8e>
+   80386:	e7ce      	b.n	80326 <vTaskIncrementTick+0x82>
+	}
+	else
+	{
+		++uxMissedTicks;
+   80388:	4b0c      	ldr	r3, [pc, #48]	; (803bc <vTaskIncrementTick+0x118>)
+   8038a:	681a      	ldr	r2, [r3, #0]
+   8038c:	3201      	adds	r2, #1
+   8038e:	601a      	str	r2, [r3, #0]
+   80390:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   80394:	200704cc 	.word	0x200704cc
+   80398:	200704d0 	.word	0x200704d0
+   8039c:	20070458 	.word	0x20070458
+   803a0:	00080225 	.word	0x00080225
+   803a4:	200704d4 	.word	0x200704d4
+   803a8:	200704c4 	.word	0x200704c4
+   803ac:	20070000 	.word	0x20070000
+   803b0:	000801dd 	.word	0x000801dd
+   803b4:	2007045c 	.word	0x2007045c
+   803b8:	000801c1 	.word	0x000801c1
+   803bc:	20070454 	.word	0x20070454
+   803c0:	20070460 	.word	0x20070460
+
+000803c4 <vTaskSwitchContext>:
+
+#endif
+/*-----------------------------------------------------------*/
+
+void vTaskSwitchContext( void )
+{
+   803c4:	b508      	push	{r3, lr}
+	if( uxSchedulerSuspended != ( unsigned portBASE_TYPE ) pdFALSE )
+   803c6:	4b1d      	ldr	r3, [pc, #116]	; (8043c <vTaskSwitchContext+0x78>)
+   803c8:	681b      	ldr	r3, [r3, #0]
+   803ca:	b95b      	cbnz	r3, 803e4 <vTaskSwitchContext+0x20>
+		#endif
+
+		taskFIRST_CHECK_FOR_STACK_OVERFLOW();
+		taskSECOND_CHECK_FOR_STACK_OVERFLOW();
+
+		taskSELECT_HIGHEST_PRIORITY_TASK();
+   803cc:	4b1c      	ldr	r3, [pc, #112]	; (80440 <vTaskSwitchContext+0x7c>)
+   803ce:	681b      	ldr	r3, [r3, #0]
+   803d0:	eb03 0383 	add.w	r3, r3, r3, lsl #2
+   803d4:	009b      	lsls	r3, r3, #2
+   803d6:	4a1b      	ldr	r2, [pc, #108]	; (80444 <vTaskSwitchContext+0x80>)
+   803d8:	58d3      	ldr	r3, [r2, r3]
+   803da:	b9cb      	cbnz	r3, 80410 <vTaskSwitchContext+0x4c>
+   803dc:	4b18      	ldr	r3, [pc, #96]	; (80440 <vTaskSwitchContext+0x7c>)
+   803de:	681b      	ldr	r3, [r3, #0]
+   803e0:	b953      	cbnz	r3, 803f8 <vTaskSwitchContext+0x34>
+   803e2:	e005      	b.n	803f0 <vTaskSwitchContext+0x2c>
+{
+	if( uxSchedulerSuspended != ( unsigned portBASE_TYPE ) pdFALSE )
+	{
+		/* The scheduler is currently suspended - do not allow a context
+		switch. */
+		xMissedYield = pdTRUE;
+   803e4:	2201      	movs	r2, #1
+   803e6:	4b18      	ldr	r3, [pc, #96]	; (80448 <vTaskSwitchContext+0x84>)
+   803e8:	601a      	str	r2, [r3, #0]
+   803ea:	bd08      	pop	{r3, pc}
+		#endif
+
+		taskFIRST_CHECK_FOR_STACK_OVERFLOW();
+		taskSECOND_CHECK_FOR_STACK_OVERFLOW();
+
+		taskSELECT_HIGHEST_PRIORITY_TASK();
+   803ec:	681a      	ldr	r2, [r3, #0]
+   803ee:	b92a      	cbnz	r2, 803fc <vTaskSwitchContext+0x38>
+   803f0:	4b16      	ldr	r3, [pc, #88]	; (8044c <vTaskSwitchContext+0x88>)
+   803f2:	4798      	blx	r3
+   803f4:	bf00      	nop
+   803f6:	e7fd      	b.n	803f4 <vTaskSwitchContext+0x30>
+   803f8:	4b11      	ldr	r3, [pc, #68]	; (80440 <vTaskSwitchContext+0x7c>)
+   803fa:	4912      	ldr	r1, [pc, #72]	; (80444 <vTaskSwitchContext+0x80>)
+   803fc:	681a      	ldr	r2, [r3, #0]
+   803fe:	3a01      	subs	r2, #1
+   80400:	601a      	str	r2, [r3, #0]
+   80402:	681a      	ldr	r2, [r3, #0]
+   80404:	eb02 0282 	add.w	r2, r2, r2, lsl #2
+   80408:	f851 2022 	ldr.w	r2, [r1, r2, lsl #2]
+   8040c:	2a00      	cmp	r2, #0
+   8040e:	d0ed      	beq.n	803ec <vTaskSwitchContext+0x28>
+   80410:	4b0b      	ldr	r3, [pc, #44]	; (80440 <vTaskSwitchContext+0x7c>)
+   80412:	681b      	ldr	r3, [r3, #0]
+   80414:	eb03 0383 	add.w	r3, r3, r3, lsl #2
+   80418:	4a0a      	ldr	r2, [pc, #40]	; (80444 <vTaskSwitchContext+0x80>)
+   8041a:	eb02 0383 	add.w	r3, r2, r3, lsl #2
+   8041e:	685a      	ldr	r2, [r3, #4]
+   80420:	6852      	ldr	r2, [r2, #4]
+   80422:	605a      	str	r2, [r3, #4]
+   80424:	f103 0108 	add.w	r1, r3, #8
+   80428:	428a      	cmp	r2, r1
+   8042a:	bf04      	itt	eq
+   8042c:	6852      	ldreq	r2, [r2, #4]
+   8042e:	605a      	streq	r2, [r3, #4]
+   80430:	685b      	ldr	r3, [r3, #4]
+   80432:	68da      	ldr	r2, [r3, #12]
+   80434:	4b06      	ldr	r3, [pc, #24]	; (80450 <vTaskSwitchContext+0x8c>)
+   80436:	601a      	str	r2, [r3, #0]
+   80438:	bd08      	pop	{r3, pc}
+   8043a:	bf00      	nop
+   8043c:	200704cc 	.word	0x200704cc
+   80440:	2007045c 	.word	0x2007045c
+   80444:	20070460 	.word	0x20070460
+   80448:	200704d8 	.word	0x200704d8
+   8044c:	00080225 	.word	0x00080225
+   80450:	200704c8 	.word	0x200704c8
+
+00080454 <pio_get_interrupt_status>:
+ *
+ * \return The interrupt status mask value.
+ */
+uint32_t pio_get_interrupt_status(const Pio *p_pio)
+{
+	return p_pio->PIO_ISR;
+   80454:	6cc0      	ldr	r0, [r0, #76]	; 0x4c
+}
+   80456:	4770      	bx	lr
+
+00080458 <pio_get_interrupt_mask>:
+ *
+ * \return The interrupt mask value.
+ */
+uint32_t pio_get_interrupt_mask(const Pio *p_pio)
+{
+	return p_pio->PIO_IMR;
+   80458:	6c80      	ldr	r0, [r0, #72]	; 0x48
+}
+   8045a:	4770      	bx	lr
+
+0008045c <pio_handler_process>:
+ *
+ * \param p_pio PIO controller base address.
+ * \param ul_id PIO controller ID.
+ */
+void pio_handler_process(Pio *p_pio, uint32_t ul_id)
+{
+   8045c:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   80460:	4604      	mov	r4, r0
+   80462:	460e      	mov	r6, r1
+	uint32_t status;
+	uint32_t i;
+
+	/* Read PIO controller status */
+	status = pio_get_interrupt_status(p_pio);
+   80464:	4b10      	ldr	r3, [pc, #64]	; (804a8 <pio_handler_process+0x4c>)
+   80466:	4798      	blx	r3
+   80468:	4605      	mov	r5, r0
+	status &= pio_get_interrupt_mask(p_pio);
+   8046a:	4620      	mov	r0, r4
+   8046c:	4b0f      	ldr	r3, [pc, #60]	; (804ac <pio_handler_process+0x50>)
+   8046e:	4798      	blx	r3
+
+	/* Check pending events */
+	if (status != 0) {
+   80470:	4005      	ands	r5, r0
+   80472:	d017      	beq.n	804a4 <pio_handler_process+0x48>
+   80474:	4f0e      	ldr	r7, [pc, #56]	; (804b0 <pio_handler_process+0x54>)
+   80476:	f107 040c 	add.w	r4, r7, #12
+   8047a:	376c      	adds	r7, #108	; 0x6c
+		/* Find triggering source */
+		i = 0;
+		while (status != 0) {
+			/* Source is configured on the same controller */
+			if (gs_interrupt_sources[i].id == ul_id) {
+   8047c:	f854 3c0c 	ldr.w	r3, [r4, #-12]
+   80480:	42b3      	cmp	r3, r6
+   80482:	d10a      	bne.n	8049a <pio_handler_process+0x3e>
+				/* Source has PIOs whose statuses have changed */
+				if ((status & gs_interrupt_sources[i].mask) != 0) {
+   80484:	f854 1c08 	ldr.w	r1, [r4, #-8]
+   80488:	4229      	tst	r1, r5
+   8048a:	d006      	beq.n	8049a <pio_handler_process+0x3e>
+					gs_interrupt_sources[i].handler(gs_interrupt_sources[i].id,
+   8048c:	6823      	ldr	r3, [r4, #0]
+   8048e:	4630      	mov	r0, r6
+   80490:	4798      	blx	r3
+							gs_interrupt_sources[i].mask);
+					status &= ~(gs_interrupt_sources[i].mask);
+   80492:	f854 3c08 	ldr.w	r3, [r4, #-8]
+   80496:	ea25 0503 	bic.w	r5, r5, r3
+				}
+			}
+			i++;
+			if (i >= MAX_INTERRUPT_SOURCES) {
+   8049a:	42bc      	cmp	r4, r7
+   8049c:	d002      	beq.n	804a4 <pio_handler_process+0x48>
+   8049e:	3410      	adds	r4, #16
+
+	/* Check pending events */
+	if (status != 0) {
+		/* Find triggering source */
+		i = 0;
+		while (status != 0) {
+   804a0:	2d00      	cmp	r5, #0
+   804a2:	d1eb      	bne.n	8047c <pio_handler_process+0x20>
+   804a4:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   804a8:	00080455 	.word	0x00080455
+   804ac:	00080459 	.word	0x00080459
+   804b0:	200704dc 	.word	0x200704dc
+
+000804b4 <PIOA_Handler>:
+/**
+ * \brief Parallel IO Controller A interrupt handler.
+ * Redefined PIOA interrupt handler for NVIC interrupt table.
+ */
+void PIOA_Handler(void)
+{
+   804b4:	b508      	push	{r3, lr}
+	pio_handler_process(PIOA, ID_PIOA);
+   804b6:	4802      	ldr	r0, [pc, #8]	; (804c0 <PIOA_Handler+0xc>)
+   804b8:	210b      	movs	r1, #11
+   804ba:	4b02      	ldr	r3, [pc, #8]	; (804c4 <PIOA_Handler+0x10>)
+   804bc:	4798      	blx	r3
+   804be:	bd08      	pop	{r3, pc}
+   804c0:	400e0e00 	.word	0x400e0e00
+   804c4:	0008045d 	.word	0x0008045d
+
+000804c8 <PIOB_Handler>:
+/**
+ * \brief Parallel IO Controller B interrupt handler
+ * Redefined PIOB interrupt handler for NVIC interrupt table.
+ */
+void PIOB_Handler(void)
+{
+   804c8:	b508      	push	{r3, lr}
+    pio_handler_process(PIOB, ID_PIOB);
+   804ca:	4802      	ldr	r0, [pc, #8]	; (804d4 <PIOB_Handler+0xc>)
+   804cc:	210c      	movs	r1, #12
+   804ce:	4b02      	ldr	r3, [pc, #8]	; (804d8 <PIOB_Handler+0x10>)
+   804d0:	4798      	blx	r3
+   804d2:	bd08      	pop	{r3, pc}
+   804d4:	400e1000 	.word	0x400e1000
+   804d8:	0008045d 	.word	0x0008045d
+
+000804dc <PIOC_Handler>:
+/**
+ * \brief Parallel IO Controller C interrupt handler.
+ * Redefined PIOC interrupt handler for NVIC interrupt table.
+ */
+void PIOC_Handler(void)
+{
+   804dc:	b508      	push	{r3, lr}
+	pio_handler_process(PIOC, ID_PIOC);
+   804de:	4802      	ldr	r0, [pc, #8]	; (804e8 <PIOC_Handler+0xc>)
+   804e0:	210d      	movs	r1, #13
+   804e2:	4b02      	ldr	r3, [pc, #8]	; (804ec <PIOC_Handler+0x10>)
+   804e4:	4798      	blx	r3
+   804e6:	bd08      	pop	{r3, pc}
+   804e8:	400e1200 	.word	0x400e1200
+   804ec:	0008045d 	.word	0x0008045d
+
+000804f0 <PIOD_Handler>:
+/**
+ * \brief Parallel IO Controller D interrupt handler.
+ * Redefined PIOD interrupt handler for NVIC interrupt table.
+ */
+void PIOD_Handler(void)
+{
+   804f0:	b508      	push	{r3, lr}
+	pio_handler_process(PIOD, ID_PIOD);
+   804f2:	4802      	ldr	r0, [pc, #8]	; (804fc <PIOD_Handler+0xc>)
+   804f4:	210e      	movs	r1, #14
+   804f6:	4b02      	ldr	r3, [pc, #8]	; (80500 <PIOD_Handler+0x10>)
+   804f8:	4798      	blx	r3
+   804fa:	bd08      	pop	{r3, pc}
+   804fc:	400e1400 	.word	0x400e1400
+   80500:	0008045d 	.word	0x0008045d
+
+00080504 <Dummy_Handler>:
+
+/**
+ * \brief Default interrupt handler for unused IRQs.
+ */
+void Dummy_Handler(void)
+{
+   80504:	e7fe      	b.n	80504 <Dummy_Handler>
+   80506:	bf00      	nop
+
+00080508 <Reset_Handler>:
+/**
+ * \brief This is the code that gets called on processor reset.
+ * To initialize the device, and call the main() routine.
+ */
+void Reset_Handler(void)
+{
+   80508:	b510      	push	{r4, lr}
+
+	/* Initialize the relocate segment */
+	pSrc = &_etext;
+	pDest = &_srelocate;
+
+	if (pSrc != pDest) {
+   8050a:	4b1e      	ldr	r3, [pc, #120]	; (80584 <Reset_Handler+0x7c>)
+   8050c:	4a1e      	ldr	r2, [pc, #120]	; (80588 <Reset_Handler+0x80>)
+   8050e:	429a      	cmp	r2, r3
+   80510:	d003      	beq.n	8051a <Reset_Handler+0x12>
+		for (; pDest < &_erelocate;) {
+   80512:	4b1e      	ldr	r3, [pc, #120]	; (8058c <Reset_Handler+0x84>)
+   80514:	4a1b      	ldr	r2, [pc, #108]	; (80584 <Reset_Handler+0x7c>)
+   80516:	429a      	cmp	r2, r3
+   80518:	d304      	bcc.n	80524 <Reset_Handler+0x1c>
+			*pDest++ = *pSrc++;
+		}
+	}
+
+	/* Clear the zero segment */
+	for (pDest = &_szero; pDest < &_ezero;) {
+   8051a:	4b1d      	ldr	r3, [pc, #116]	; (80590 <Reset_Handler+0x88>)
+   8051c:	4a1d      	ldr	r2, [pc, #116]	; (80594 <Reset_Handler+0x8c>)
+   8051e:	429a      	cmp	r2, r3
+   80520:	d30f      	bcc.n	80542 <Reset_Handler+0x3a>
+   80522:	e01a      	b.n	8055a <Reset_Handler+0x52>
+   80524:	4b1c      	ldr	r3, [pc, #112]	; (80598 <Reset_Handler+0x90>)
+   80526:	4c1d      	ldr	r4, [pc, #116]	; (8059c <Reset_Handler+0x94>)
+   80528:	1ae4      	subs	r4, r4, r3
+   8052a:	f024 0403 	bic.w	r4, r4, #3
+   8052e:	3404      	adds	r4, #4
+	/* Initialize the relocate segment */
+	pSrc = &_etext;
+	pDest = &_srelocate;
+
+	if (pSrc != pDest) {
+		for (; pDest < &_erelocate;) {
+   80530:	2300      	movs	r3, #0
+			*pDest++ = *pSrc++;
+   80532:	4814      	ldr	r0, [pc, #80]	; (80584 <Reset_Handler+0x7c>)
+   80534:	4914      	ldr	r1, [pc, #80]	; (80588 <Reset_Handler+0x80>)
+   80536:	585a      	ldr	r2, [r3, r1]
+   80538:	501a      	str	r2, [r3, r0]
+   8053a:	3304      	adds	r3, #4
+	/* Initialize the relocate segment */
+	pSrc = &_etext;
+	pDest = &_srelocate;
+
+	if (pSrc != pDest) {
+		for (; pDest < &_erelocate;) {
+   8053c:	42a3      	cmp	r3, r4
+   8053e:	d1fa      	bne.n	80536 <Reset_Handler+0x2e>
+   80540:	e7eb      	b.n	8051a <Reset_Handler+0x12>
+   80542:	4b17      	ldr	r3, [pc, #92]	; (805a0 <Reset_Handler+0x98>)
+   80544:	4917      	ldr	r1, [pc, #92]	; (805a4 <Reset_Handler+0x9c>)
+   80546:	1ac9      	subs	r1, r1, r3
+   80548:	f021 0103 	bic.w	r1, r1, #3
+   8054c:	1d1a      	adds	r2, r3, #4
+   8054e:	4411      	add	r1, r2
+		}
+	}
+
+	/* Clear the zero segment */
+	for (pDest = &_szero; pDest < &_ezero;) {
+		*pDest++ = 0;
+   80550:	2200      	movs	r2, #0
+   80552:	f843 2f04 	str.w	r2, [r3, #4]!
+			*pDest++ = *pSrc++;
+		}
+	}
+
+	/* Clear the zero segment */
+	for (pDest = &_szero; pDest < &_ezero;) {
+   80556:	428b      	cmp	r3, r1
+   80558:	d1fb      	bne.n	80552 <Reset_Handler+0x4a>
+		*pDest++ = 0;
+	}
+
+	/* Set the vector table base address */
+	pSrc = (uint32_t *) & _sfixed;
+	SCB->VTOR = ((uint32_t) pSrc & SCB_VTOR_TBLOFF_Msk);
+   8055a:	4a13      	ldr	r2, [pc, #76]	; (805a8 <Reset_Handler+0xa0>)
+   8055c:	f022 4360 	bic.w	r3, r2, #3758096384	; 0xe0000000
+   80560:	f023 037f 	bic.w	r3, r3, #127	; 0x7f
+   80564:	4911      	ldr	r1, [pc, #68]	; (805ac <Reset_Handler+0xa4>)
+   80566:	608b      	str	r3, [r1, #8]
+
+	if (((uint32_t) pSrc >= IRAM0_ADDR) && ((uint32_t) pSrc < NFC_RAM_ADDR)) {
+   80568:	f102 4260 	add.w	r2, r2, #3758096384	; 0xe0000000
+   8056c:	f5b2 1f80 	cmp.w	r2, #1048576	; 0x100000
+   80570:	d203      	bcs.n	8057a <Reset_Handler+0x72>
+		SCB->VTOR |= 1 << SCB_VTOR_TBLBASE_Pos;
+   80572:	688a      	ldr	r2, [r1, #8]
+   80574:	f042 5200 	orr.w	r2, r2, #536870912	; 0x20000000
+   80578:	608a      	str	r2, [r1, #8]
+	}
+
+	/* Initialize the C library */
+	__libc_init_array();
+   8057a:	4b0d      	ldr	r3, [pc, #52]	; (805b0 <Reset_Handler+0xa8>)
+   8057c:	4798      	blx	r3
+
+	/* Branch to main function */
+	main();
+   8057e:	4b0d      	ldr	r3, [pc, #52]	; (805b4 <Reset_Handler+0xac>)
+   80580:	4798      	blx	r3
+   80582:	e7fe      	b.n	80582 <Reset_Handler+0x7a>
+   80584:	20070000 	.word	0x20070000
+   80588:	00080738 	.word	0x00080738
+   8058c:	20070438 	.word	0x20070438
+   80590:	200705c8 	.word	0x200705c8
+   80594:	20070438 	.word	0x20070438
+   80598:	20070004 	.word	0x20070004
+   8059c:	2007043b 	.word	0x2007043b
+   805a0:	20070434 	.word	0x20070434
+   805a4:	200705c3 	.word	0x200705c3
+   805a8:	00080000 	.word	0x00080000
+   805ac:	e000ed00 	.word	0xe000ed00
+   805b0:	00080605 	.word	0x00080605
+   805b4:	000805b9 	.word	0x000805b9
+
+000805b8 <main>:
+
+extern int test_sum(void);
+extern int test_diff(void);
+extern int test_product(void);
+int main (void)
+{
+   805b8:	b508      	push	{r3, lr}
+	// Insert system clock initialization code here (sysclk_init()).
+	UnityBegin("test/testmath.c");
+   805ba:	4802      	ldr	r0, [pc, #8]	; (805c4 <main+0xc>)
+   805bc:	4b02      	ldr	r3, [pc, #8]	; (805c8 <main+0x10>)
+   805be:	4798      	blx	r3
+	
+	//UnityEnd();
+
+	return 0;
+	// Insert application code here, after the board has been initialized.
+}
+   805c0:	2000      	movs	r0, #0
+   805c2:	bd08      	pop	{r3, pc}
+   805c4:	000806fc 	.word	0x000806fc
+   805c8:	000801a5 	.word	0x000801a5
+
+000805cc <atexit>:
+   805cc:	4601      	mov	r1, r0
+   805ce:	2000      	movs	r0, #0
+   805d0:	4602      	mov	r2, r0
+   805d2:	4603      	mov	r3, r0
+   805d4:	f000 b83c 	b.w	80650 <__register_exitproc>
+
+000805d8 <__libc_fini_array>:
+   805d8:	b538      	push	{r3, r4, r5, lr}
+   805da:	4d08      	ldr	r5, [pc, #32]	; (805fc <__libc_fini_array+0x24>)
+   805dc:	4c08      	ldr	r4, [pc, #32]	; (80600 <__libc_fini_array+0x28>)
+   805de:	1b64      	subs	r4, r4, r5
+   805e0:	10a4      	asrs	r4, r4, #2
+   805e2:	eb05 0584 	add.w	r5, r5, r4, lsl #2
+   805e6:	b124      	cbz	r4, 805f2 <__libc_fini_array+0x1a>
+   805e8:	f855 3d04 	ldr.w	r3, [r5, #-4]!
+   805ec:	3c01      	subs	r4, #1
+   805ee:	4798      	blx	r3
+   805f0:	e7f9      	b.n	805e6 <__libc_fini_array+0xe>
+   805f2:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+   805f6:	f000 b897 	b.w	80728 <_fini>
+   805fa:	bf00      	nop
+   805fc:	00080734 	.word	0x00080734
+   80600:	00080738 	.word	0x00080738
+
+00080604 <__libc_init_array>:
+   80604:	b570      	push	{r4, r5, r6, lr}
+   80606:	4b0e      	ldr	r3, [pc, #56]	; (80640 <__libc_init_array+0x3c>)
+   80608:	4d0e      	ldr	r5, [pc, #56]	; (80644 <__libc_init_array+0x40>)
+   8060a:	2400      	movs	r4, #0
+   8060c:	1aed      	subs	r5, r5, r3
+   8060e:	10ad      	asrs	r5, r5, #2
+   80610:	461e      	mov	r6, r3
+   80612:	42ac      	cmp	r4, r5
+   80614:	d004      	beq.n	80620 <__libc_init_array+0x1c>
+   80616:	f856 2024 	ldr.w	r2, [r6, r4, lsl #2]
+   8061a:	4790      	blx	r2
+   8061c:	3401      	adds	r4, #1
+   8061e:	e7f8      	b.n	80612 <__libc_init_array+0xe>
+   80620:	f000 f878 	bl	80714 <_init>
+   80624:	4d08      	ldr	r5, [pc, #32]	; (80648 <__libc_init_array+0x44>)
+   80626:	4b09      	ldr	r3, [pc, #36]	; (8064c <__libc_init_array+0x48>)
+   80628:	2400      	movs	r4, #0
+   8062a:	1aed      	subs	r5, r5, r3
+   8062c:	10ad      	asrs	r5, r5, #2
+   8062e:	461e      	mov	r6, r3
+   80630:	42ac      	cmp	r4, r5
+   80632:	d004      	beq.n	8063e <__libc_init_array+0x3a>
+   80634:	f856 2024 	ldr.w	r2, [r6, r4, lsl #2]
+   80638:	4790      	blx	r2
+   8063a:	3401      	adds	r4, #1
+   8063c:	e7f8      	b.n	80630 <__libc_init_array+0x2c>
+   8063e:	bd70      	pop	{r4, r5, r6, pc}
+   80640:	00080720 	.word	0x00080720
+   80644:	00080720 	.word	0x00080720
+   80648:	00080728 	.word	0x00080728
+   8064c:	00080720 	.word	0x00080720
+
+00080650 <__register_exitproc>:
+   80650:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   80654:	4698      	mov	r8, r3
+   80656:	4b22      	ldr	r3, [pc, #136]	; (806e0 <__register_exitproc+0x90>)
+   80658:	4606      	mov	r6, r0
+   8065a:	681c      	ldr	r4, [r3, #0]
+   8065c:	460f      	mov	r7, r1
+   8065e:	f8d4 0148 	ldr.w	r0, [r4, #328]	; 0x148
+   80662:	4691      	mov	r9, r2
+   80664:	b918      	cbnz	r0, 8066e <__register_exitproc+0x1e>
+   80666:	f504 70a6 	add.w	r0, r4, #332	; 0x14c
+   8066a:	f8c4 0148 	str.w	r0, [r4, #328]	; 0x148
+   8066e:	6843      	ldr	r3, [r0, #4]
+   80670:	2b1f      	cmp	r3, #31
+   80672:	dd16      	ble.n	806a2 <__register_exitproc+0x52>
+   80674:	4b1b      	ldr	r3, [pc, #108]	; (806e4 <__register_exitproc+0x94>)
+   80676:	b91b      	cbnz	r3, 80680 <__register_exitproc+0x30>
+   80678:	f04f 30ff 	mov.w	r0, #4294967295
+   8067c:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   80680:	f44f 70c8 	mov.w	r0, #400	; 0x190
+   80684:	f3af 8000 	nop.w
+   80688:	2800      	cmp	r0, #0
+   8068a:	d0f5      	beq.n	80678 <__register_exitproc+0x28>
+   8068c:	f8d4 1148 	ldr.w	r1, [r4, #328]	; 0x148
+   80690:	2500      	movs	r5, #0
+   80692:	6045      	str	r5, [r0, #4]
+   80694:	6001      	str	r1, [r0, #0]
+   80696:	f8c4 0148 	str.w	r0, [r4, #328]	; 0x148
+   8069a:	f8c0 5188 	str.w	r5, [r0, #392]	; 0x188
+   8069e:	f8c0 518c 	str.w	r5, [r0, #396]	; 0x18c
+   806a2:	6844      	ldr	r4, [r0, #4]
+   806a4:	b1a6      	cbz	r6, 806d0 <__register_exitproc+0x80>
+   806a6:	2201      	movs	r2, #1
+   806a8:	40a2      	lsls	r2, r4
+   806aa:	eb00 0584 	add.w	r5, r0, r4, lsl #2
+   806ae:	f8c5 9088 	str.w	r9, [r5, #136]	; 0x88
+   806b2:	f8d0 1188 	ldr.w	r1, [r0, #392]	; 0x188
+   806b6:	2e02      	cmp	r6, #2
+   806b8:	ea41 0102 	orr.w	r1, r1, r2
+   806bc:	f8c0 1188 	str.w	r1, [r0, #392]	; 0x188
+   806c0:	f8c5 8108 	str.w	r8, [r5, #264]	; 0x108
+   806c4:	d104      	bne.n	806d0 <__register_exitproc+0x80>
+   806c6:	f8d0 318c 	ldr.w	r3, [r0, #396]	; 0x18c
+   806ca:	431a      	orrs	r2, r3
+   806cc:	f8c0 218c 	str.w	r2, [r0, #396]	; 0x18c
+   806d0:	1c63      	adds	r3, r4, #1
+   806d2:	3402      	adds	r4, #2
+   806d4:	6043      	str	r3, [r0, #4]
+   806d6:	f840 7024 	str.w	r7, [r0, r4, lsl #2]
+   806da:	2000      	movs	r0, #0
+   806dc:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   806e0:	0008070c 	.word	0x0008070c
+   806e4:	00000000 	.word	0x00000000
+
+000806e8 <register_fini>:
+   806e8:	4b02      	ldr	r3, [pc, #8]	; (806f4 <register_fini+0xc>)
+   806ea:	b113      	cbz	r3, 806f2 <register_fini+0xa>
+   806ec:	4802      	ldr	r0, [pc, #8]	; (806f8 <register_fini+0x10>)
+   806ee:	f7ff bf6d 	b.w	805cc <atexit>
+   806f2:	4770      	bx	lr
+   806f4:	00000000 	.word	0x00000000
+   806f8:	000805d9 	.word	0x000805d9
+   806fc:	74736574 	.word	0x74736574
+   80700:	7365742f 	.word	0x7365742f
+   80704:	74616d74 	.word	0x74616d74
+   80708:	00632e68 	.word	0x00632e68
+
+0008070c <_global_impure_ptr>:
+   8070c:	20070010 00000043                       ... C...
+
+00080714 <_init>:
+   80714:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+   80716:	bf00      	nop
+   80718:	bcf8      	pop	{r3, r4, r5, r6, r7}
+   8071a:	bc08      	pop	{r3}
+   8071c:	469e      	mov	lr, r3
+   8071e:	4770      	bx	lr
+
+00080720 <__init_array_start>:
+   80720:	000806e9 	.word	0x000806e9
+
+00080724 <__frame_dummy_init_array_entry>:
+   80724:	0008016d                                m...
+
+00080728 <_fini>:
+   80728:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+   8072a:	bf00      	nop
+   8072c:	bcf8      	pop	{r3, r4, r5, r6, r7}
+   8072e:	bc08      	pop	{r3}
+   80730:	469e      	mov	lr, r3
+   80732:	4770      	bx	lr
+
+00080734 <__fini_array_start>:
+   80734:	00080145 	.word	0x00080145
