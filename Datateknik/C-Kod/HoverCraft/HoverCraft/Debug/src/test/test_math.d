@@ -1,4 +1,4 @@
-src/test/testmath.d src/test/testmath.o: ../src/test/testmath.c \
+src/test/test_math.d src/test/test_math.o: ../src/test/test_math.c \
  ../src/math.h ../src/test/unity.h ../src/test/unity_internals.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu-toolchain\arm-none-eabi\include\setjmp.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h \

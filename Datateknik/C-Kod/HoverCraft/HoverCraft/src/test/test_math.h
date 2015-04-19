@@ -10,9 +10,9 @@
 #define TESTMATH_H_
 
 
-int test_sum(void);
-int test_diff(void);
-int test_product(void);
+void test_sum(void);
+void test_diff(void);
+void test_product(void);
 
 
 #endif /* TESTMATH_H_ */

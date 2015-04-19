@@ -1,7 +1,9 @@
 /**
+ *
  * \file
  *
- * \brief Common GPIO API.
+ * \brief USART Serial driver functions.
+ *
  *
  * Copyright (c) 2010-2012 Atmel Corporation. All rights reserved.
  *
@@ -40,44 +42,42 @@
  * \asf_license_stop
  *
  */
-#ifndef _GPIO_H_
-#define _GPIO_H_
-
-#include <parts.h>
-
-#if (SAM3S || SAM3U || SAM3N || SAM3XA || SAM4S || SAM4E)
-# include "sam_gpio/sam_gpio.h"
-#elif XMEGA
-# include "xmega_gpio/xmega_gpio.h"
-#elif MEGA || MEGA_RF
-# include "mega_gpio/mega_gpio.h"
-#else
-# error Unsupported chip type
-#endif
+#include "serial.h"
 
 /**
- * \defgroup gpio_group General Purpose Input/Output
+ * \brief Send a sequence of bytes to USART device
  *
- * This is the common API for GPIO. Additional features are available
- * in the documentation of the specific modules.
+ * \param usart  Base address of the USART instance.
+ * \param data   Data buffer to read
+ * \param len    Length of data
  *
- * \section io_group_platform Platform Dependencies
- *
- * The following functions are available on all platforms, but there may
- * be variations in the function signature (i.e. parameters) and
- * behaviour. These functions are typically called by platform-specific
- * parts of drivers, and applications that aren't intended to be
- * portable:
- *   - gpio_pin_is_low()
- *   - gpio_pin_is_high()
- *   - gpio_set_pin_high()
- *   - gpio_set_pin_group_high()
- *   - gpio_set_pin_low()
- *   - gpio_set_pin_group_low()
- *   - gpio_toggle_pin()
- *   - gpio_toggle_pin_group()
- *   - gpio_configure_pin()
- *   - gpio_configure_group()
  */
+status_code_t usart_serial_write_packet(usart_if usart, const uint8_t *data,
+		size_t len)
+{
+	while (len) {
+		usart_serial_putchar(usart, *data);
+		len--;
+		data++;
+	}
+	return STATUS_OK;
+}
 
-#endif  /* _GPIO_H_ */
+/**
+ * \brief Receive a sequence of bytes from USART device
+ *
+ * \param usart  Base address of the USART instance.
+ * \param data   Data buffer to write
+ * \param len    Length of data
+ *
+ */
+status_code_t usart_serial_read_packet(usart_if usart, uint8_t *data,
+		size_t len)
+{
+	while (len) {
+		usart_serial_getchar(usart, data);
+		len--;
+		data++;
+	}
+	return STATUS_OK;
+}
