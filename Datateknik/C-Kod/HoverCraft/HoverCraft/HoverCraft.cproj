@@ -471,6 +471,7 @@
     <Folder Include="src\ASF\" />
     <Folder Include="src\ASF\common\" />
     <Folder Include="src\ASF\common\boards\" />
+    <Folder Include="src\ASF\common\boards\interrupt\" />
     <Folder Include="src\ASF\common\services\" />
     <Folder Include="src\ASF\common\services\clock\" />
     <Folder Include="src\ASF\common\services\clock\sam3x\" />
@@ -481,7 +482,6 @@
     <Folder Include="src\ASF\common\services\serial\" />
     <Folder Include="src\ASF\common\services\serial\sam_uart\" />
     <Folder Include="src\ASF\common\utils\" />
-    <Folder Include="src\ASF\common\utils\interrupt\" />
     <Folder Include="src\ASF\common\utils\stdio\" />
     <Folder Include="src\ASF\common\utils\stdio\stdio_serial\" />
     <Folder Include="src\ASF\sam\" />
@@ -530,7 +530,25 @@
     <Folder Include="src\test" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\test_math_runner.c">
+    <Compile Include="src\adc_functions.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\adc_functions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\boards\interrupt\interrupt_sam_nvic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ASF\common\boards\interrupt\interrupt_sam_nvic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\test\test_adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\test\test_adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\test_adc_runner.c">
       <SubType>compile</SubType>
     </Compile>
     <None Include="src\ASF\common\services\serial\sam_uart\uart_serial.h">
@@ -1004,9 +1022,6 @@
     <None Include="src\ASF\common\services\gpio\gpio.h">
       <SubType>compile</SubType>
     </None>
-    <Compile Include="src\ASF\common\utils\interrupt\interrupt_sam_nvic.c">
-      <SubType>compile</SubType>
-    </Compile>
     <None Include="src\ASF\sam\utils\status_codes.h">
       <SubType>compile</SubType>
     </None>
@@ -1035,9 +1050,6 @@
       <SubType>compile</SubType>
     </None>
     <None Include="src\ASF\sam\utils\cmsis\sam3x\include\instance\instance_hsmci.h">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="src\ASF\common\utils\interrupt\interrupt_sam_nvic.h">
       <SubType>compile</SubType>
     </None>
     <Compile Include="src\ASF\sam\boards\arduino_due_x\init.c">

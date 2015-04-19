@@ -106,7 +106,7 @@ src/ASF/sam/drivers/pio/pio_handler.d \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu-toolchain\arm-none-eabi\include\machine\stdlib.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu-toolchain\arm-none-eabi\include\alloca.h \
  ../src/ASF/common/utils/interrupt.h \
- ../src/ASF/common/utils/interrupt/interrupt_sam_nvic.h \
+ ../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h \
  ../src/ASF/sam/drivers/pio/pio_handler.h
 
 ../src/ASF/sam/drivers/pio/pio.h:
@@ -321,6 +321,6 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu
 
 ../src/ASF/common/utils/interrupt.h:
 
-../src/ASF/common/utils/interrupt/interrupt_sam_nvic.h:
+../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h:
 
 ../src/ASF/sam/drivers/pio/pio_handler.h:

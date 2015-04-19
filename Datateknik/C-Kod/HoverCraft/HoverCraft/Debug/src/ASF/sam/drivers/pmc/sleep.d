@@ -104,7 +104,7 @@ src/ASF/sam/drivers/pmc/sleep.d src/ASF/sam/drivers/pmc/sleep.o: \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu-toolchain\arm-none-eabi\include\machine\stdlib.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu-toolchain\arm-none-eabi\include\alloca.h \
  ../src/ASF/common/utils/interrupt.h \
- ../src/ASF/common/utils/interrupt/interrupt_sam_nvic.h \
+ ../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h \
  ../src/ASF/sam/drivers/pmc/sleep.h ../src/ASF/sam/drivers/pmc/pmc.h \
  ../src/ASF/common/boards/board.h \
  ../src/ASF/sam/boards/arduino_due_x/arduino_due_x.h \
@@ -320,7 +320,7 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu
 
 ../src/ASF/common/utils/interrupt.h:
 
-../src/ASF/common/utils/interrupt/interrupt_sam_nvic.h:
+../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h:
 
 ../src/ASF/sam/drivers/pmc/sleep.h:
 

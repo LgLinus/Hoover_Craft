@@ -108,7 +108,7 @@ src/ASF/common/services/serial/usart_serial.d \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu-toolchain\arm-none-eabi\include\machine\stdlib.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu-toolchain\arm-none-eabi\include\alloca.h \
  ../src/ASF/common/utils/interrupt.h \
- ../src/ASF/common/utils/interrupt/interrupt_sam_nvic.h \
+ ../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h \
  ../src/ASF/common/services/clock/sysclk.h ../src/config/conf_clock.h \
  ../src/ASF/common/services/clock/sam3x/sysclk.h \
  ../src/ASF/common/services/clock/osc.h \
@@ -337,7 +337,7 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu
 
 ../src/ASF/common/utils/interrupt.h:
 
-../src/ASF/common/utils/interrupt/interrupt_sam_nvic.h:
+../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h:
 
 ../src/ASF/common/services/clock/sysclk.h:
 

@@ -2,7 +2,13 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-src\test_math_runner.c
+src\adc_functions.c
+
+src\ASF\common\boards\interrupt\interrupt_sam_nvic.c
+
+src\test\test_adc.c
+
+src\test_adc_runner.c
 
 src\ASF\common\services\serial\usart_serial.c
 
@@ -37,8 +43,6 @@ src\ASF\sam\drivers\adc\adc_sam3u.c
 src\ASF\sam\drivers\pwm\pwm.c
 
 src\ASF\common\services\clock\sam3x\sysclk.c
-
-src\ASF\common\utils\interrupt\interrupt_sam_nvic.c
 
 src\ASF\sam\boards\arduino_due_x\init.c
 

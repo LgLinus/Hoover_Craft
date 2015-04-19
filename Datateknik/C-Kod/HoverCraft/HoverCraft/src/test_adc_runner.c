@@ -7,10 +7,10 @@
 #include <asf.h>
 #include "test/unity.h"
 #include <setjmp.h>
+#include "adc_functions.h"
 
-extern void test_sum(void);
-extern void test_product(void);
-extern void test_diff(void);
+extern void test_adc_12bit(void);
+extern void test_channel_3_enabled(void);
 
 /* Configure console UART. */
 static void configure_console(void)
@@ -34,6 +34,11 @@ int main(void)
 	configure_console();
 	board_init();
 	sysclk_init();
-
+	init_adc();
+	
+	UnityBegin("test/test_adc.c"); // Begin unity on the test protocol for test_math, run setUp() in test_math.c
+	RUN_TEST(test_adc_12bit,20);
+	RUN_TEST(test_channel_3_enabled,20);
+	UnityEnd(); // End test protocol, print information
 	return 0;
 }
