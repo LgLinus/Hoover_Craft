@@ -1,3 +1,2 @@
 # Hoover_Craft
-Project for computer science, year 2.
-WOOP
+Example of how to use Unity for test-driven development
