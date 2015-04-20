@@ -29,3 +29,7 @@ void test_adc_12bit(void){
 void test_channel_3_enabled(void){
 	TEST_ASSERT_BIT_HIGH_MESSAGE(3,ADC->ADC_CHSR,"Channel 3 disabled");
 }
+
+void test_adc_pin_enabled(void){
+	TEST_ASSERT_BIT_HIGH_MESSAGE(6,PIOA->PIO_PSR,"Pin 3 is disabled");
+}
