@@ -1,6 +1,5 @@
-src/test_adc_runner.d src/test_adc_runner.o: ../src/test_adc_runner.c \
- ../src/asf.h ../src/ASF/sam/drivers/adc/adc.h \
- ../src/ASF/sam/utils/compiler.h \
+src/test_runner.d src/test_runner.o: ../src/test_runner.c ../src/asf.h \
+ ../src/ASF/sam/drivers/adc/adc.h ../src/ASF/sam/utils/compiler.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1437\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.4\include\stddef.h \
  ../src/ASF/common/utils/parts.h \
  ../src/ASF/sam/utils/preprocessor/preprocessor.h \
@@ -106,7 +105,7 @@ src/test_adc_runner.d src/test_adc_runner.o: ../src/test_adc_runner.c \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1437\arm-gnu-toolchain\arm-none-eabi\include\alloca.h \
  ../src/ASF/common/utils/interrupt.h \
  ../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h \
- ../src/ASF/sam/utils/status_codes.h \
+ ../src/ASF/sam/utils/status_codes.h ../src/ASF/sam/drivers/dacc/dacc.h \
  ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include/FreeRTOS.h \
  ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include/projdefs.h \
  ../src/config/FreeRTOSConfig.h \
@@ -153,7 +152,7 @@ src/test_adc_runner.d src/test_adc_runner.o: ../src/test_adc_runner.c \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1437\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.4\include-fixed\limits.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1437\arm-gnu-toolchain\lib\gcc\arm-none-eabi\4.8.4\include-fixed\syslimits.h \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1437\arm-gnu-toolchain\arm-none-eabi\include\limits.h \
- ../src/adc_functions.h
+ ../src/test/test_pwm.h
 
 ../src/asf.h:
 
@@ -373,6 +372,8 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1437\arm-gnu
 
 ../src/ASF/sam/utils/status_codes.h:
 
+../src/ASF/sam/drivers/dacc/dacc.h:
+
 ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include/FreeRTOS.h:
 
 ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include/projdefs.h:
@@ -477,4 +478,4 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1437\arm-gnu
 
 c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1437\arm-gnu-toolchain\arm-none-eabi\include\limits.h:
 
-../src/adc_functions.h:
+../src/test/test_pwm.h:

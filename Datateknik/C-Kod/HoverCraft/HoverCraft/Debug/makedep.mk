@@ -2,13 +2,23 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-src\adc_functions.c
-
 src\ASF\common\boards\interrupt\interrupt_sam_nvic.c
+
+src\ASF\sam\drivers\dacc\dacc.c
+
+src\main.c
 
 src\test\test_adc.c
 
-src\test_adc_runner.c
+src\test\test_pwm.c
+
+src\test_runner.c
+
+src\Util\analogDigitalConverter.c
+
+src\Util\io_uart.c
+
+src\Util\pwmInit.c
 
 src\ASF\common\services\serial\usart_serial.c
 
