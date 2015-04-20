@@ -106,7 +106,11 @@ src/adc_functions.d src/adc_functions.o: ../src/adc_functions.c \
  c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu-toolchain\arm-none-eabi\include\alloca.h \
  ../src/ASF/common/utils/interrupt.h \
  ../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h \
- ../src/ASF/sam/utils/status_codes.h \
+ ../src/ASF/sam/components/sensor/mma7341l/mma7341l.h \
+ ../src/ASF/common/boards/board.h \
+ ../src/ASF/sam/boards/arduino_due_x/arduino_due_x.h \
+ ../src/ASF/sam/utils/cmsis/sam3x/source/templates/exceptions.h \
+ ../src/config/conf_mma7341l.h ../src/ASF/sam/utils/status_codes.h \
  ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include/FreeRTOS.h \
  ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include/projdefs.h \
  ../src/config/FreeRTOSConfig.h \
@@ -129,9 +133,7 @@ src/adc_functions.d src/adc_functions.o: ../src/adc_functions.c \
  ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include/task.h \
  ../src/ASF/common/services/gpio/gpio.h \
  ../src/ASF/common/services/gpio/sam_gpio/sam_gpio.h \
- ../src/ASF/sam/drivers/pio/pio.h ../src/ASF/common/boards/board.h \
- ../src/ASF/sam/boards/arduino_due_x/arduino_due_x.h \
- ../src/ASF/sam/utils/cmsis/sam3x/source/templates/exceptions.h \
+ ../src/ASF/sam/drivers/pio/pio.h \
  ../src/ASF/common/services/ioport/ioport.h \
  ../src/ASF/common/services/ioport/sam/ioport_pio.h \
  ../src/ASF/common/services/clock/sysclk.h ../src/config/conf_clock.h \
@@ -364,6 +366,16 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu
 
 ../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h:
 
+../src/ASF/sam/components/sensor/mma7341l/mma7341l.h:
+
+../src/ASF/common/boards/board.h:
+
+../src/ASF/sam/boards/arduino_due_x/arduino_due_x.h:
+
+../src/ASF/sam/utils/cmsis/sam3x/source/templates/exceptions.h:
+
+../src/config/conf_mma7341l.h:
+
 ../src/ASF/sam/utils/status_codes.h:
 
 ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include/FreeRTOS.h:
@@ -411,12 +423,6 @@ c:\program\ files\ (x86)\atmel\atmel\ toolchain\arm\ gcc\native\4.8.1426\arm-gnu
 ../src/ASF/common/services/gpio/sam_gpio/sam_gpio.h:
 
 ../src/ASF/sam/drivers/pio/pio.h:
-
-../src/ASF/common/boards/board.h:
-
-../src/ASF/sam/boards/arduino_due_x/arduino_due_x.h:
-
-../src/ASF/sam/utils/cmsis/sam3x/source/templates/exceptions.h:
 
 ../src/ASF/common/services/ioport/ioport.h:
 

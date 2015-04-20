@@ -6,6 +6,8 @@ src\adc_functions.c
 
 src\ASF\common\boards\interrupt\interrupt_sam_nvic.c
 
+src\ASF\sam\components\sensor\mma7341l\mma7341l.c
+
 src\test\test_adc.c
 
 src\test_adc_runner.c

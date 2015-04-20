@@ -55,6 +55,9 @@
 // From module: ADC - Analog-to-digital Converter
 #include <adc.h>
 
+// From module: Accelerometer MMA7341L
+#include <mma7341l.h>
+
 // From module: Common SAM compiler driver
 #include <compiler.h>
 #include <status_codes.h>
