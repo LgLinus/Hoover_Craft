@@ -40,9 +40,11 @@ int main(void)
 	RUN_TEST(test_adc_12bit,20);
 	RUN_TEST(test_channel_3_enabled,20);
 	UnityEnd(); // End test protocol, print information
-	
+	int a;
 	for(;;){
-		
+		a = adc_get_latest_value(ADC);
+		printf("%d",a);
+		adc_start(ADC);
 	}
 	return 0;
 }
