@@ -11,5 +11,8 @@
 
 void test_pwm_channel_0(void);
 void test_pwm_channel_1(void);
+void test_pwm_channel_2(void);
+void test_pwm_channel_3(void);
+void test_pwm_channel_4(void);
 
 #endif /* TEST_PWM_H_ */
