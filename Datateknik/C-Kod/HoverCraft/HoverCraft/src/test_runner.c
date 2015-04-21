@@ -36,6 +36,7 @@ int test_function(void)
 	UnityBegin("test/test_adc.c"); // Begin unity on the test protocol for test_math, run setUp() in test_math.c
 	//RUN_TEST(test_channel_3_enabled,20);
 	RUN_TEST(test_pwm_channel_0,12);
+	RUN_TEST(test_pwm_channel_1,18);
 	UnityEnd(); // End test protocol, print information
 	
 	for(;;){

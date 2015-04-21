@@ -15,3 +15,7 @@ void test_pwm_channel_0(void)
 }
 
 /* Method for testing channel 1 is enabled */
+void test_pwm_channel_1(void)
+{
+	TEST_ASSERT_BIT_HIGH_MESSAGE(1, PWM->PWM_SR, "Wrong channel is enabled");
+}
