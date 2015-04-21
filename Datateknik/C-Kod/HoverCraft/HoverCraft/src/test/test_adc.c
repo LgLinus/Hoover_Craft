@@ -30,6 +30,17 @@ void test_channel_3_enabled(void){
 	TEST_ASSERT_BIT_HIGH_MESSAGE(3,ADC->ADC_CHSR,"Channel 3 disabled");
 }
 
+/* Check if the adc pin is enabled*/
 void test_adc_pin_enabled(void){
 	TEST_ASSERT_BIT_HIGH_MESSAGE(6,PIOA->PIO_PSR,"Pin 3 is disabled");
+}
+
+/* Check if the adc pin is set to input */
+void test_adc_pin_input(void){
+	TEST_ASSERT_BIT_LOW_MESSAGE(6,PIOA->PIO_OSR,"Pin 3 is output");
+}
+
+/* Check if the adc pin is set to input */
+void test_adc_pin_pullup(void){
+	TEST_ASSERT_BIT_LOW_MESSAGE(6,PIOA->PIO_PUSR,"Pin 3 mode is not pullup");
 }

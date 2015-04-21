@@ -14,6 +14,8 @@ void test_adc_enabled(void);
 void test_adc_12bit(void);
 void test_channel_3_enabled(void);
 void test_adc_pin_enabled(void);
+void test_adc_pin_input(void);
+void test_adc_pin_pullup(void);
 
 
 #endif /* TEST_ADC_H_ */
