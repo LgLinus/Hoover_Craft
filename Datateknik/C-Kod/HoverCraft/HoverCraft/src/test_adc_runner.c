@@ -51,25 +51,30 @@ int main(void)
 	UnityEnd(); // End test protocol, print information
 	
 	int a;
+	int b;
 	int i;
 	
 	for(;;)
 	{	
 		i = 0;
-		a = 0;	
+		a = 0;
+		b = 0;
 		while(i<10) // Average filter 
 		{
-			int temp = adc_get_latest_value(ADC);
+		int temp = ADC->ADC_CDR[3];//adc_get_latest_value(ADC);
 			adc_start(ADC);
-			
+		int temp2 = ADC->ADC_CDR[4];	
 			if(temp!=0)
 			{
 				a += temp;
+				b += temp2;
 				i++;
 			}
-		}
-		a = a/10;
-		//printf("%d\n\r",a);
+	}
+	a = a/10;
+	b = b/10;
+		printf("#3 %d\n\r",a);
+		printf("#4 %d\n\r",b);
 	}
 	return 0;
 }
