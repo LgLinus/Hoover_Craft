@@ -28,6 +28,18 @@ void test_adc_12bit(void){
 void test_channel_3_enabled(void){
 	TEST_ASSERT_BIT_HIGH_MESSAGE(3,ADC->ADC_CHSR,"Channel 3 disabled");
 }
+/* Check if channel 3 is enabled*/
+void test_channel_4_enabled(void){
+	TEST_ASSERT_BIT_HIGH_MESSAGE(4,ADC->ADC_CHSR,"Channel 4 disabled");
+}
+/* Check if channel 3 is enabled*/
+void test_channel_5_enabled(void){
+	TEST_ASSERT_BIT_HIGH_MESSAGE(5,ADC->ADC_CHSR,"Channel 5 disabled");
+}
+/* Check if channel 3 is enabled*/
+void test_channel_6_enabled(void){
+	TEST_ASSERT_BIT_HIGH_MESSAGE(6,ADC->ADC_CHSR,"Channel 6 disabled");
+}
 
 /* Check if the adc pin is enabled*/
 void test_adc_pin_enabled(void){

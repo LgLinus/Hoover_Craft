@@ -13,6 +13,9 @@
 void test_adc_enabled(void);
 void test_adc_12bit(void);
 void test_channel_3_enabled(void);
+void test_channel_4_enabled(void);
+void test_channel_5_enabled(void);
+void test_channel_6_enabled(void);
 void test_adc_pin_enabled(void);
 void test_adc_pin_input(void);
 void test_adc_pin_pullup(void);
