@@ -75,6 +75,8 @@ int main(void)
 	b = b/10;
 		printf("#3 %d\n\r",a);
 		printf("#4 %d\n\r",b);
+		printf("#4 %d\n\r",ADC->ADC_CDR[5]);
+		printf("#4 %d\n\r",ADC->ADC_CDR[6]);
 	}
 	return 0;
 }
