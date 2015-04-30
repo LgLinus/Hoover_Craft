@@ -2,20 +2,21 @@
  * test_pwm.c
  *
  * Created: 2015-04-20 15:21:45
- *  Author: Jesper
+ *  Author: Jesper Hansen
  */ 
 
 #include "unity.h"
 #include "asf.h"
 
-/* Method testing channel 0 is enabled */
-void test_pwm_channel_0(void)
+/* Method testing if PWM channel is enabled */
+void test_pwm_channel_enabled(void)
 {
-	TEST_ASSERT_BIT_HIGH_MESSAGE(0, PWM->PWM_SR,"Wrong channel in enabled");
+	pmc_enable_periph_clk(ID_PWM);
+	pwm_channel_enable(PWM, PWM_CHANNEL_0);
+	pwm_channel_enable(PWM, PWM_CHANNEL_1);
+	pwm_channel_enable(PWM, PWM_CHANNEL_2);
+	pwm_channel_enable(PWM, PWM_CHANNEL_3);
+	pwm_channel_enable(PWM, PWM_CHANNEL_4);
+	TEST_ASSERT_EQUAL_HEX32(0x0000001F, PWM->PWM_SR);	
 }
 
-/* Method for testing channel 1 is enabled */
-void test_pwm_channel_1(void)
-{
-	TEST_ASSERT_BIT_HIGH_MESSAGE(1, PWM->PWM_SR, "Wrong channel is enabled");
-}
