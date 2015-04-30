@@ -9,9 +9,6 @@
 #include <setjmp.h>
 #include "test/test_pwm.h"
 
-extern void test_adc_12bit(void);
-extern void test_channel_3_enabled(void);
-
 /* Configure console UART. */
 void configure_console(void)
 {
@@ -33,8 +30,17 @@ int test_function(void)
 {
 	configure_console();
 	
+<<<<<<< HEAD
 	UnityBegin("test/test_adc.c"); // Begin unity on the test protocol for test_math, run setUp() in test_math.c
 	RUN_TEST(test_pwm_channel_enabled,12);
+=======
+	UnityBegin("test/test_pwm.c"); // Begin unity on the test protocol for test_math, run setUp() in test_math.c
+	RUN_TEST(test_pwm_channel_0,13);
+	RUN_TEST(test_pwm_channel_1,21);
+	RUN_TEST(test_pwm_channel_2,29);
+	RUN_TEST(test_pwm_channel_3,37);
+	RUN_TEST(test_pwm_channel_4,45);
+>>>>>>> 922d6488929f892eaa570b3995759a188003cf84
 	UnityEnd(); // End test protocol, print information
 	
 	for(;;){
