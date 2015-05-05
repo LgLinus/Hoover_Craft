@@ -9,10 +9,11 @@
 #ifndef CONTROLLER_BACK_H_
 #define CONTROLLER_BACK_H_
 
-#define CONTROLLER_SCHEDULE_TIME 250
+void update_fan_cycle(int duty_cycle, int active_fan);
+void controll_back(int,int);
 
-void start_controller_back(void *);
-
-
-
-#endif /* SERIAL_COMMUNICATOIN_H_ */
+#define CONTROLLER_SCHEDULE_TIME 500
+#define KP 1
+#define TI 1
+#define TD 0.1
+#endif /* CONTROLLER_FRONT_H_ */

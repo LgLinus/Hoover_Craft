@@ -11,6 +11,17 @@
 #include "values.h"
 #include "pwm_controller.h"
 
+int sum = 0;
+double u;
+int e;
+double PI;
+double PD;
+int invalue; // Difference between left, right
+int activeFan; // Keep track on which fan to activate, 0 left, 1 right
+static int d_buffert[d_buffer] = {0};
+static int current_buffert[buffert_size] = {0};
+int current_value;
+
 /* Start the communication task */
 void start_controller_front(void *p)
 {
@@ -40,33 +51,23 @@ void start_controller_front(void *p)
 /* Function responsible of controlling the front fans*/
 void controll_front(int left, int right){
 	
-	int invalue; // Difference between left, right
-	int activeFan; // Keep track on which fan to activate, 0 left, 1 right
-	static int d_buffert[d_buffer] = {0};
-	static int current_buffert[buffert_size] = {0};
-	static int sum; // Sum for the 'I' part
-	sum = 0;
-	int current_value;	
-	double u;
-	int e;
-	double PI;
-	double PD;
+	invalue = -2;
 	
-	invalue= (left+100)-right; 
 	if(invalue<0)
 		invalue = invalue*-1;
 	printf("invalue: %d\n\r",invalue);
+	
 	/* Calculate which fan to control in order to move the hoovercraft correctly */
+	printf("L: %d, R: %d\n\r",left,right);
 	if(left<right)
 	{
-		activeFan = left;
+		activeFan = leftFan;
 	}
 	else
 	{
-		activeFan = right;
+		activeFan = rightFan;
 	}
 	
-	/* Put the read value from the adc into buffert*/
 		
 	/* Make room for the new values */
 		if(invalue!=0)
@@ -100,12 +101,12 @@ void controll_front(int left, int right){
 			
 			
 			current_value = sum_current_median/buffert_size;
-			
+			printf("Curr_value %d", current_value);
 			e = (current_value);
 			
 			/* I-part */
 			sum = sum + e;
-			PI = (double) ((CONTROLLER_SCHEDULE_TIME/(1000*temp_TI))*sum);
+			PI = (double) ((CONTROLLER_SCHEDULE_TIME/((double)1000*temp_TI))*sum);
 			printf("PI: %d",(int) PI);
 			/* D-part */
 			/* Calculate derivate */
