@@ -8,20 +8,25 @@
 
 #include <asf.h>
 #include "serial_communication.h"
-void init_tasks(void);
+#include "pwm_controller.h"
+#include "semaphores.h"
 
-/**
-* Configure consol UART.
-*/
+void init_tasks(void);
+void init_pwm(void);
+void init_sempahores(void);
+
+xSemaphoreHandle semahpore_duty_cycles = 0;
+
+/* Configure console UART.*/
 static void configure_console(void)
 {
 	const usart_serial_options_t uart_serial_options = { .baudrate =
-	CONF_UART_BAUDRATE, .paritytype = CONF_UART_PARITY };
-	/* Konfigurera konsol UART. */
+	CONF_UART_BAUDRATE, .paritytype = CONF_UART_PARITY };// Configure console UART. 
+	
 	sysclk_enable_peripheral_clock(CONSOLE_UART_ID);
 	stdio_serial_init(CONF_UART, &uart_serial_options);
-	/* Specifiera att stdout inte ska buffras */
-	ioport_set_pin_mode(PIO_PA8_IDX,IOPORT_MODE_PULLUP);
+	
+	ioport_set_pin_mode(PIO_PA8_IDX,IOPORT_MODE_PULLUP);// No stdout buffer
 	#if defined(__GNUC__)
 	setbuf(stdout, NULL);
 	
@@ -30,21 +35,42 @@ static void configure_console(void)
 
 int main(void)
 {
-	
+	/* Setup */
 	sysclk_init();
 	board_init();
 	ioport_init();
 	configure_console();
 	
+	init_pwm();
+	init_sempahores();
 	init_tasks();
+	
+}
+
+/* Initialize the pwm signals */
+void init_pwm(void)
+{
+	initialize_pwm();
+	update_duty_cycle_DAC1(999);		// 999 is the highest duty cycle
+	update_duty_cycle_36(600);
+	update_duty_cycle_38(600);
+	update_duty_cycle_40(500);
+	update_duty_cycle_9(700);
+
 }
 
 void init_tasks(void)
 {
+	/* Create and start the communication task */
 	if(xTaskCreate(start_communication,(const signed char * const) "Communication", 2048, NULL, 1, NULL) !=pdPASS)
 	{
 		printf("Could not create task Communication");
 	}
 	
 	vTaskStartScheduler(); // Start the tasks
+}
+
+void init_sempahores(void)
+{
+	vSemaphoreCreateBinary(semahpore_duty_cycles);	
 }

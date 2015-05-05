@@ -105,7 +105,9 @@ C_SRCS +=  \
 ../src/ASF/sam/drivers/usart/usart.c \
 ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.c \
 ../src/main.c \
+../src/pwm_controller.c \
 ../src/serial_communication.c \
+../src/test/test_duty_cycle.c \
 ../src/test/unity.c \
 ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/list.c \
 ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam/port.c \
@@ -143,7 +145,9 @@ src/ASF/sam/drivers/uart/uart.o \
 src/ASF/sam/drivers/usart/usart.o \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.o \
 src/main.o \
+src/pwm_controller.o \
 src/serial_communication.o \
+src/test/test_duty_cycle.o \
 src/test/unity.o \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/list.o \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam/port.o \
@@ -174,7 +178,9 @@ src/ASF/sam/drivers/uart/uart.o \
 src/ASF/sam/drivers/usart/usart.o \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.o \
 src/main.o \
+src/pwm_controller.o \
 src/serial_communication.o \
+src/test/test_duty_cycle.o \
 src/test/unity.o \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/list.o \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam/port.o \
@@ -205,7 +211,9 @@ src/ASF/sam/drivers/uart/uart.d \
 src/ASF/sam/drivers/usart/usart.d \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.d \
 src/main.d \
+src/pwm_controller.d \
 src/serial_communication.d \
+src/test/test_duty_cycle.d \
 src/test/unity.d \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/list.d \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam/port.d \
@@ -236,7 +244,9 @@ src/ASF/sam/drivers/uart/uart.d \
 src/ASF/sam/drivers/usart/usart.d \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.d \
 src/main.d \
+src/pwm_controller.d \
 src/serial_communication.d \
+src/test/test_duty_cycle.d \
 src/test/unity.d \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/list.d \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam/port.d \
@@ -269,6 +279,10 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 LIB_DEP+= 
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 

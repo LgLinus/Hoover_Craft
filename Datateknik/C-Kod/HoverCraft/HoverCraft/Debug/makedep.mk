@@ -18,7 +18,11 @@ src\ASF\thirdparty\freertos\freertos-7.3.0\source\FreeRTOS_CLI.c
 
 src\main.c
 
+src\pwm_controller.c
+
 src\serial_communication.c
+
+src\test\test_duty_cycle.c
 
 src\test\unity.c
 

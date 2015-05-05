@@ -146,7 +146,13 @@ src/serial_communication.d src/serial_communication.o: \
  ../src/ASF/common/services/serial/sam_uart/uart_serial.h \
  ../src/ASF/sam/drivers/uart/uart.h ../src/ASF/sam/drivers/usart/usart.h \
  ../src/config/conf_uart_serial.h \
- ../src/ASF/sam/drivers/pio/pio_handler.h ../src/serial_communication.h
+ ../src/ASF/sam/drivers/pio/pio_handler.h ../src/serial_communication.h \
+ ../src/pwm_controller.h ../src/test/unity.h \
+ ../src/test/unity_internals.h \
+ u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/setjmp.h \
+ u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/machine/setjmp.h \
+ u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/include-fixed/limits.h \
+ ../src/semaphores.h
 
 ../src/asf.h:
 
@@ -457,3 +463,17 @@ u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolc
 ../src/ASF/sam/drivers/pio/pio_handler.h:
 
 ../src/serial_communication.h:
+
+../src/pwm_controller.h:
+
+../src/test/unity.h:
+
+../src/test/unity_internals.h:
+
+u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/setjmp.h:
+
+u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/machine/setjmp.h:
+
+u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/include-fixed/limits.h:
+
+../src/semaphores.h:
