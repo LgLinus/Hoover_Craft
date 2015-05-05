@@ -10,6 +10,9 @@
 #include "serial_communication.h"
 #include "pwm_controller.h"
 #include "semaphores.h"
+#include "adc_functions.h"
+#include "controller_front.h"
+#include "controller_back.h"
 
 void init_tasks(void);
 void init_pwm(void);
@@ -41,6 +44,7 @@ int main(void)
 	ioport_init();
 	configure_console();
 	
+	init_adc();
 	init_pwm();
 	init_sempahores();
 	init_tasks();
@@ -61,6 +65,18 @@ void init_pwm(void)
 
 void init_tasks(void)
 {
+	/* Create and start the front controller task */
+	if(xTaskCreate(start_controller_front,(const signed char * const) "Front controller", 2048, NULL, 2, NULL) !=pdPASS)
+	{
+		printf("Could not create task Front controller");
+	}
+	
+	/* Create and start the front controller task */
+	if(xTaskCreate(start_controller_back,(const signed char * const) "Back controller", 2048, NULL, 2, NULL) !=pdPASS)
+	{
+		printf("Could not create task Back controller");
+	}
+	
 	/* Create and start the communication task */
 	if(xTaskCreate(start_communication,(const signed char * const) "Communication", 2048, NULL, 1, NULL) !=pdPASS)
 	{

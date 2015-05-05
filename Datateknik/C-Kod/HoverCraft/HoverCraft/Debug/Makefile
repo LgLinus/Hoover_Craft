@@ -97,6 +97,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../src/adc_functions.c \
 ../src/ASF/common/services/serial/usart_serial.c \
 ../src/ASF/common/utils/stdio/read.c \
 ../src/ASF/common/utils/stdio/write.c \
@@ -104,6 +105,8 @@ C_SRCS +=  \
 ../src/ASF/sam/drivers/uart/uart.c \
 ../src/ASF/sam/drivers/usart/usart.c \
 ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.c \
+../src/controller_back.c \
+../src/controller_front.c \
 ../src/main.c \
 ../src/pwm_controller.c \
 ../src/serial_communication.c \
@@ -137,6 +140,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+src/adc_functions.o \
 src/ASF/common/services/serial/usart_serial.o \
 src/ASF/common/utils/stdio/read.o \
 src/ASF/common/utils/stdio/write.o \
@@ -144,6 +148,8 @@ src/ASF/sam/drivers/adc/adc.o \
 src/ASF/sam/drivers/uart/uart.o \
 src/ASF/sam/drivers/usart/usart.o \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.o \
+src/controller_back.o \
+src/controller_front.o \
 src/main.o \
 src/pwm_controller.o \
 src/serial_communication.o \
@@ -170,6 +176,7 @@ src/ASF/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o \
 src/ASF/sam/utils/syscalls/gcc/syscalls.o
 
 OBJS_AS_ARGS +=  \
+src/adc_functions.o \
 src/ASF/common/services/serial/usart_serial.o \
 src/ASF/common/utils/stdio/read.o \
 src/ASF/common/utils/stdio/write.o \
@@ -177,6 +184,8 @@ src/ASF/sam/drivers/adc/adc.o \
 src/ASF/sam/drivers/uart/uart.o \
 src/ASF/sam/drivers/usart/usart.o \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.o \
+src/controller_back.o \
+src/controller_front.o \
 src/main.o \
 src/pwm_controller.o \
 src/serial_communication.o \
@@ -203,6 +212,7 @@ src/ASF/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o \
 src/ASF/sam/utils/syscalls/gcc/syscalls.o
 
 C_DEPS +=  \
+src/adc_functions.d \
 src/ASF/common/services/serial/usart_serial.d \
 src/ASF/common/utils/stdio/read.d \
 src/ASF/common/utils/stdio/write.d \
@@ -210,6 +220,8 @@ src/ASF/sam/drivers/adc/adc.d \
 src/ASF/sam/drivers/uart/uart.d \
 src/ASF/sam/drivers/usart/usart.d \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.d \
+src/controller_back.d \
+src/controller_front.d \
 src/main.d \
 src/pwm_controller.d \
 src/serial_communication.d \
@@ -236,6 +248,7 @@ src/ASF/sam/utils/cmsis/sam3x/source/templates/system_sam3x.d \
 src/ASF/sam/utils/syscalls/gcc/syscalls.d
 
 C_DEPS_AS_ARGS +=  \
+src/adc_functions.d \
 src/ASF/common/services/serial/usart_serial.d \
 src/ASF/common/utils/stdio/read.d \
 src/ASF/common/utils/stdio/write.d \
@@ -243,6 +256,8 @@ src/ASF/sam/drivers/adc/adc.d \
 src/ASF/sam/drivers/uart/uart.d \
 src/ASF/sam/drivers/usart/usart.d \
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/FreeRTOS_CLI.d \
+src/controller_back.d \
+src/controller_front.d \
 src/main.d \
 src/pwm_controller.d \
 src/serial_communication.d \
@@ -342,6 +357,19 @@ LIB_DEP+=
 
 
 
+
+
+
+
+
+
+src/%.o: ../src/%.c
+	@echo Building file: $<
+	@echo Invoking: ARM/GNU C Compiler : 4.7.3
+	$(QUOTE)U:\InstalledApps\Atmel\Atmel Toolchain\ARM GCC\Native\4.7.3.1029\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAM3X8E__ -DDEBUG -DBOARD=ARDUINO_DUE_X -Dscanf=iscanf -DARM_MATH_CM3=true -Dprintf=iprintf -D__SAM3X8E__ -D__FREERTOS__  -I"../common/applications/user_application/sam3x8e_arduino_due_x/config" -I"../src/ASF/sam/utils/cmsis/sam3x/include" -I"../src/config" -I"../src/ASF/thirdparty/CMSIS/Lib/GCC" -I"../src/ASF/common/utils" -I"../src" -I"../src/ASF/common/services/clock" -I"../src/ASF/common/services/gpio" -I"../src/ASF/sam/drivers/pmc" -I"../src/ASF/sam/utils" -I"../src/ASF/sam/utils/preprocessor" -I"../src/ASF/sam/boards" -I"../src/ASF/common/boards" -I"../src/ASF/sam/drivers/pio" -I"../src/ASF/sam/boards/arduino_due_x" -I"../src/ASF/sam/utils/header_files" -I"../src/ASF/sam/utils/cmsis/sam3x/source/templates" -I"../src/ASF/common/services/ioport" -I"../src/ASF/thirdparty/CMSIS/Include" -I"../src/ASF/sam/drivers/pwm" -I"../src/ASF/sam/drivers/adc" -I"../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include" -I"../src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam" -I"../src/ASF/sam/drivers/uart" -I"../src/ASF/sam/drivers/usart" -I"../src/ASF/common/services/serial/sam_uart" -I"../src/ASF/common/services/serial" -I"../src/ASF/common/utils/stdio/stdio_serial"  -O1 -fdata-sections -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m3 -c -pipe -fno-strict-aliasing -Wall -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -std=gnu99 -ffunction-sections -fdata-sections -Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow -Wbad-function-cast -Wwrite-strings -Wsign-compare -Waggregate-return  -Wmissing-declarations -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Wlong-long -Wunreachable-code -Wcast-align --param max-inline-insns-single=500 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 src/ASF/common/services/serial/%.o: ../src/ASF/common/services/serial/%.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 4.7.3
@@ -378,13 +406,6 @@ src/ASF/sam/drivers/usart/%.o: ../src/ASF/sam/drivers/usart/%.c
 	
 
 src/ASF/thirdparty/freertos/freertos-7.3.0/source/%.o: ../src/ASF/thirdparty/freertos/freertos-7.3.0/source/%.c
-	@echo Building file: $<
-	@echo Invoking: ARM/GNU C Compiler : 4.7.3
-	$(QUOTE)U:\InstalledApps\Atmel\Atmel Toolchain\ARM GCC\Native\4.7.3.1029\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAM3X8E__ -DDEBUG -DBOARD=ARDUINO_DUE_X -Dscanf=iscanf -DARM_MATH_CM3=true -Dprintf=iprintf -D__SAM3X8E__ -D__FREERTOS__  -I"../common/applications/user_application/sam3x8e_arduino_due_x/config" -I"../src/ASF/sam/utils/cmsis/sam3x/include" -I"../src/config" -I"../src/ASF/thirdparty/CMSIS/Lib/GCC" -I"../src/ASF/common/utils" -I"../src" -I"../src/ASF/common/services/clock" -I"../src/ASF/common/services/gpio" -I"../src/ASF/sam/drivers/pmc" -I"../src/ASF/sam/utils" -I"../src/ASF/sam/utils/preprocessor" -I"../src/ASF/sam/boards" -I"../src/ASF/common/boards" -I"../src/ASF/sam/drivers/pio" -I"../src/ASF/sam/boards/arduino_due_x" -I"../src/ASF/sam/utils/header_files" -I"../src/ASF/sam/utils/cmsis/sam3x/source/templates" -I"../src/ASF/common/services/ioport" -I"../src/ASF/thirdparty/CMSIS/Include" -I"../src/ASF/sam/drivers/pwm" -I"../src/ASF/sam/drivers/adc" -I"../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include" -I"../src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam" -I"../src/ASF/sam/drivers/uart" -I"../src/ASF/sam/drivers/usart" -I"../src/ASF/common/services/serial/sam_uart" -I"../src/ASF/common/services/serial" -I"../src/ASF/common/utils/stdio/stdio_serial"  -O1 -fdata-sections -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m3 -c -pipe -fno-strict-aliasing -Wall -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -std=gnu99 -ffunction-sections -fdata-sections -Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow -Wbad-function-cast -Wwrite-strings -Wsign-compare -Waggregate-return  -Wmissing-declarations -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Wlong-long -Wunreachable-code -Wcast-align --param max-inline-insns-single=500 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-src/%.o: ../src/%.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 4.7.3
 	$(QUOTE)U:\InstalledApps\Atmel\Atmel Toolchain\ARM GCC\Native\4.7.3.1029\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAM3X8E__ -DDEBUG -DBOARD=ARDUINO_DUE_X -Dscanf=iscanf -DARM_MATH_CM3=true -Dprintf=iprintf -D__SAM3X8E__ -D__FREERTOS__  -I"../common/applications/user_application/sam3x8e_arduino_due_x/config" -I"../src/ASF/sam/utils/cmsis/sam3x/include" -I"../src/config" -I"../src/ASF/thirdparty/CMSIS/Lib/GCC" -I"../src/ASF/common/utils" -I"../src" -I"../src/ASF/common/services/clock" -I"../src/ASF/common/services/gpio" -I"../src/ASF/sam/drivers/pmc" -I"../src/ASF/sam/utils" -I"../src/ASF/sam/utils/preprocessor" -I"../src/ASF/sam/boards" -I"../src/ASF/common/boards" -I"../src/ASF/sam/drivers/pio" -I"../src/ASF/sam/boards/arduino_due_x" -I"../src/ASF/sam/utils/header_files" -I"../src/ASF/sam/utils/cmsis/sam3x/source/templates" -I"../src/ASF/common/services/ioport" -I"../src/ASF/thirdparty/CMSIS/Include" -I"../src/ASF/sam/drivers/pwm" -I"../src/ASF/sam/drivers/adc" -I"../src/ASF/thirdparty/freertos/freertos-7.3.0/source/include" -I"../src/ASF/thirdparty/freertos/freertos-7.3.0/source/portable/gcc/sam" -I"../src/ASF/sam/drivers/uart" -I"../src/ASF/sam/drivers/usart" -I"../src/ASF/common/services/serial/sam_uart" -I"../src/ASF/common/services/serial" -I"../src/ASF/common/utils/stdio/stdio_serial"  -O1 -fdata-sections -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m3 -c -pipe -fno-strict-aliasing -Wall -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -std=gnu99 -ffunction-sections -fdata-sections -Wchar-subscripts -Wcomment -Wformat=2 -Wimplicit-int -Wmain -Wparentheses -Wsequence-point -Wreturn-type -Wswitch -Wtrigraphs -Wunused -Wuninitialized -Wunknown-pragmas -Wfloat-equal -Wundef -Wshadow -Wbad-function-cast -Wwrite-strings -Wsign-compare -Waggregate-return  -Wmissing-declarations -Wformat -Wmissing-format-attribute -Wno-deprecated-declarations -Wpacked -Wredundant-decls -Wnested-externs -Wlong-long -Wunreachable-code -Wcast-align --param max-inline-insns-single=500 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

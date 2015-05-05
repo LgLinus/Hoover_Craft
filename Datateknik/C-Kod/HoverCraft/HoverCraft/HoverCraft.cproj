@@ -521,12 +521,21 @@
     <Folder Include="src\test" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\values.h">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="src\ASF\common\services\serial\sam_uart\uart_serial.h">
       <SubType>compile</SubType>
     </None>
     <None Include="src\ASF\common\services\serial\serial.h">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="src\adc_functions.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\adc_functions.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\ASF\common\services\serial\usart_serial.c">
       <SubType>compile</SubType>
     </Compile>
@@ -560,6 +569,18 @@
     <None Include="src\config\conf_uart_serial.h">
       <SubType>compile</SubType>
     </None>
+    <Compile Include="src\controller_back.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\controller_back.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\controller_front.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\controller_front.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\main.c">
       <SubType>compile</SubType>
     </Compile>

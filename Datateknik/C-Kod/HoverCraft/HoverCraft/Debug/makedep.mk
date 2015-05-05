@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\adc_functions.c
+
 src\ASF\common\services\serial\usart_serial.c
 
 src\ASF\common\utils\stdio\read.c
@@ -15,6 +17,10 @@ src\ASF\sam\drivers\uart\uart.c
 src\ASF\sam\drivers\usart\usart.c
 
 src\ASF\thirdparty\freertos\freertos-7.3.0\source\FreeRTOS_CLI.c
+
+src\controller_back.c
+
+src\controller_front.c
 
 src\main.c
 

@@ -1,5 +1,6 @@
-src/main.d src/main.o: ../src/main.c ../src/asf.h \
- ../src/ASF/sam/drivers/adc/adc.h ../src/ASF/sam/utils/compiler.h \
+src/adc_functions.d src/adc_functions.o: ../src/adc_functions.c \
+ ../src/asf.h ../src/ASF/sam/drivers/adc/adc.h \
+ ../src/ASF/sam/utils/compiler.h \
  u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/include/stddef.h \
  ../src/ASF/common/utils/parts.h \
  ../src/ASF/sam/utils/preprocessor/preprocessor.h \
@@ -145,9 +146,7 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/ASF/common/services/serial/sam_uart/uart_serial.h \
  ../src/ASF/sam/drivers/uart/uart.h ../src/ASF/sam/drivers/usart/usart.h \
  ../src/config/conf_uart_serial.h \
- ../src/ASF/sam/drivers/pio/pio_handler.h ../src/serial_communication.h \
- ../src/pwm_controller.h ../src/semaphores.h ../src/adc_functions.h \
- ../src/controller_front.h ../src/controller_back.h
+ ../src/ASF/sam/drivers/pio/pio_handler.h
 
 ../src/asf.h:
 
@@ -456,15 +455,3 @@ u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolc
 ../src/config/conf_uart_serial.h:
 
 ../src/ASF/sam/drivers/pio/pio_handler.h:
-
-../src/serial_communication.h:
-
-../src/pwm_controller.h:
-
-../src/semaphores.h:
-
-../src/adc_functions.h:
-
-../src/controller_front.h:
-
-../src/controller_back.h:
