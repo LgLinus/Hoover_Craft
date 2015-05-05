@@ -1,5 +1,5 @@
 /*
- * adc.c
+ * adc_functions.c
  
  * File initializing the adc
  *

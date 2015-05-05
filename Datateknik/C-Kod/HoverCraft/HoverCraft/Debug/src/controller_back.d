@@ -146,7 +146,8 @@ src/controller_back.d src/controller_back.o: ../src/controller_back.c \
  ../src/ASF/common/services/serial/sam_uart/uart_serial.h \
  ../src/ASF/sam/drivers/uart/uart.h ../src/ASF/sam/drivers/usart/usart.h \
  ../src/config/conf_uart_serial.h \
- ../src/ASF/sam/drivers/pio/pio_handler.h ../src/controller_back.h
+ ../src/ASF/sam/drivers/pio/pio_handler.h ../src/controller_back.h \
+ ../src/values.h ../src/pwm_controller.h
 
 ../src/asf.h:
 
@@ -457,3 +458,7 @@ u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolc
 ../src/ASF/sam/drivers/pio/pio_handler.h:
 
 ../src/controller_back.h:
+
+../src/values.h:
+
+../src/pwm_controller.h:

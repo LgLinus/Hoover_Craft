@@ -1,5 +1,5 @@
 /*
- * serial_communication.c
+ * controller_back.c
  *
  * File responsible of handling the controlling of the two back fans.
  *

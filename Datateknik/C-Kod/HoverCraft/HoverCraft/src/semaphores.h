@@ -1,8 +1,10 @@
 /*
  * semaphores.h
  *
+ * File holding the semaphores
+ *
  * Created: 2015-05-05 10:48:29
- *  Author: ad2302
+ *  Author: Linus Granath
  */ 
 
 
