@@ -59,6 +59,9 @@
 #include <compiler.h>
 #include <status_codes.h>
 
+// From module: Delay routines
+#include <delay.h>
+
 // From module: FreeRTOS - Kernel 7.3.0
 #include <FreeRTOS.h>
 #include <FreeRTOS_CLI.h>

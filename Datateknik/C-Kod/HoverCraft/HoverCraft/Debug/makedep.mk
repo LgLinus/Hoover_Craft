@@ -6,6 +6,8 @@ src\adc_functions.c
 
 src\ASF\common\boards\interrupt\interrupt_sam_nvic.c
 
+src\ASF\common\services\delay\sam\cycle_counter.c
+
 src\test\test_adc.c
 
 src\test_adc_runner.c

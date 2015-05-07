@@ -37,6 +37,7 @@ int main(void)
 	configure_console();
 	board_init();
 	sysclk_init();
+	delay_init();
 	
 	init_adc();
 	
@@ -52,6 +53,8 @@ int main(void)
 	
 	int a;
 	int b;
+	int c;
+	int d;
 	int i;
 	
 	for(;;)
@@ -59,24 +62,33 @@ int main(void)
 		i = 0;
 		a = 0;
 		b = 0;
+		c = 0;
+		d = 0;
 		while(i<10) // Average filter 
 		{
 		int temp = ADC->ADC_CDR[3];//adc_get_latest_value(ADC);
 			adc_start(ADC);
 		int temp2 = ADC->ADC_CDR[4];	
+		int temp3 = ADC->ADC_CDR[5];
+		int temp4 = ADC->ADC_CDR[6];	
 			if(temp!=0)
 			{
 				a += temp;
 				b += temp2;
+				c += temp3;
+				d += temp4;
 				i++;
 			}
 	}
 	a = a/10;
 	b = b/10;
-		printf("#3 %d\n\r",a);
-		printf("#4 %d\n\r",b);
-		printf("#4 %d\n\r",ADC->ADC_CDR[5]);
-		printf("#4 %d\n\r",ADC->ADC_CDR[6]);
+	c = c/10;
+	d = d/10;
+		printf("#A4 %d\n\r",a);
+		printf("#A3 %d\n\r",b);
+		printf("#A2 %d\n\r",c);
+		printf("#A1 %d\n\r",d);
+		delay_ms(1000);
 	}
 	return 0;
 }

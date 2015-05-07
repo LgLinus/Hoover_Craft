@@ -1,5 +1,7 @@
-src/ASF/sam/drivers/pmc/pmc.d src/ASF/sam/drivers/pmc/pmc.o: \
- ../src/ASF/sam/drivers/pmc/pmc.c ../src/ASF/sam/drivers/pmc/pmc.h \
+src/ASF/common/services/delay/sam/cycle_counter.d \
+ src/ASF/common/services/delay/sam/cycle_counter.o: \
+ ../src/ASF/common/services/delay/sam/cycle_counter.c \
+ ../src/ASF/common/services/delay/sam/cycle_counter.h \
  ../src/ASF/sam/utils/compiler.h \
  u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/include/stddef.h \
  ../src/ASF/common/utils/parts.h \
@@ -107,7 +109,7 @@ src/ASF/sam/drivers/pmc/pmc.d src/ASF/sam/drivers/pmc/pmc.o: \
  ../src/ASF/common/utils/interrupt.h \
  ../src/ASF/common/boards/interrupt/interrupt_sam_nvic.h
 
-../src/ASF/sam/drivers/pmc/pmc.h:
+../src/ASF/common/services/delay/sam/cycle_counter.h:
 
 ../src/ASF/sam/utils/compiler.h:
 
