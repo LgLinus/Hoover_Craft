@@ -97,6 +97,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../src/values.c \
 ../src/adc_functions.c \
 ../src/ASF/common/services/serial/usart_serial.c \
 ../src/ASF/common/utils/stdio/read.c \
@@ -140,6 +141,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+src/values.o \
 src/adc_functions.o \
 src/ASF/common/services/serial/usart_serial.o \
 src/ASF/common/utils/stdio/read.o \
@@ -176,6 +178,7 @@ src/ASF/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o \
 src/ASF/sam/utils/syscalls/gcc/syscalls.o
 
 OBJS_AS_ARGS +=  \
+src/values.o \
 src/adc_functions.o \
 src/ASF/common/services/serial/usart_serial.o \
 src/ASF/common/utils/stdio/read.o \
@@ -212,6 +215,7 @@ src/ASF/sam/utils/cmsis/sam3x/source/templates/system_sam3x.o \
 src/ASF/sam/utils/syscalls/gcc/syscalls.o
 
 C_DEPS +=  \
+src/values.d \
 src/adc_functions.d \
 src/ASF/common/services/serial/usart_serial.d \
 src/ASF/common/utils/stdio/read.d \
@@ -248,6 +252,7 @@ src/ASF/sam/utils/cmsis/sam3x/source/templates/system_sam3x.d \
 src/ASF/sam/utils/syscalls/gcc/syscalls.d
 
 C_DEPS_AS_ARGS +=  \
+src/values.d \
 src/adc_functions.d \
 src/ASF/common/services/serial/usart_serial.d \
 src/ASF/common/utils/stdio/read.d \
@@ -294,6 +299,8 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 LIB_DEP+= 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

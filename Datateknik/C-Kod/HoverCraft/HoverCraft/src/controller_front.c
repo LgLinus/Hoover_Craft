@@ -10,16 +10,17 @@
 #include "controller_front.h"
 #include "values.h"
 #include "pwm_controller.h"
+#include "semaphores.h"
 
-int sum = 0;
+int sum_front = 0;
 double u;
 int e;
 double PI;
 double PD;
 int invalue; // Difference between left, right
 int activeFan; // Keep track on which fan to activate, 0 left, 1 right
-static int d_buffert[d_buffer] = {0};
-static int current_buffert[buffert_size] = {0};
+int d_buffert_front[d_buffer] = {0};
+int current_buffert_front[buffert_size] = {0};
 int current_value;
 
 /* Start the communication task */
@@ -41,6 +42,11 @@ void start_controller_front(void *p)
 		front_left_inductor = ADC->ADC_CDR[4];
 		int front_right_inductor;
 		front_right_inductor = ADC->ADC_CDR[3];
+			
+		xSemaphoreTake(semaphore_adc_values,portMAX_DELAY); // Take semaphore
+		adc_value_front_left = front_left_inductor;
+		adc_value_front_right = front_right_inductor;
+		xSemaphoreGive(semaphore_adc_values); // Take semaphore
 		
 		controll_front(front_left_inductor,front_right_inductor);
 		
@@ -51,14 +57,10 @@ void start_controller_front(void *p)
 /* Function responsible of controlling the front fans*/
 void controll_front(int left, int right){
 	
-	invalue = -2;
+	invalue = left-right;
 	
-	if(invalue<0)
-		invalue = invalue*-1;
-	printf("invalue: %d\n\r",invalue);
 	
 	/* Calculate which fan to control in order to move the hoovercraft correctly */
-	printf("L: %d, R: %d\n\r",left,right);
 	if(left<right)
 	{
 		activeFan = leftFan;
@@ -76,16 +78,16 @@ void controll_front(int left, int right){
 			/* Moving average filter */
 			for(int i = buffert_size-1; i > 0;i--)
 			{
-				current_buffert[i] = current_buffert[i-1];
+				current_buffert_front[i] = current_buffert_front[i-1];
 			}
 
-			current_buffert[0] = invalue;
+			current_buffert_front[0] = invalue;
 			
 			int sum_current_median = 0;
 			/* Calculate median value */
 			for(int i = 0; i < buffert_size;i++)
 			{
-				sum_current_median +=current_buffert[i];
+				sum_current_median +=current_buffert_front[i];
 			}
 			
 			/* Make sure no other process uses the values */
@@ -101,20 +103,27 @@ void controll_front(int left, int right){
 			
 			
 			current_value = sum_current_median/buffert_size;
-			printf("Curr_value %d", current_value);
+			
+			if (current_value<0)
+				current_value=current_value*-1;
+				
 			e = (current_value);
 			
 			/* I-part */
-			sum = sum + e;
-			PI = (double) ((CONTROLLER_SCHEDULE_TIME/((double)1000*temp_TI))*sum);
-			printf("PI: %d",(int) PI);
+			sum_front = sum_front + e;
+			PI = (double) ((CONTROLLER_SCHEDULE_TIME/((double)1000*temp_TI))*sum_front);
+			
 			/* D-part */
 			/* Calculate derivate */
-			d_buffert[1] = d_buffert[0];
-			d_buffert[0] = e;
+			d_buffert_front[1] = d_buffert_front[0];
+			d_buffert_front[0] = e;
 			int d_diff;
-			d_diff = d_buffert[0]-d_buffert[1];
+			d_diff = d_buffert_front[0]-d_buffert_front[1];
 			PD = (temp_TD*d_diff)/((double)CONTROLLER_SCHEDULE_TIME/1000);
+			
+			/* Only P -control */
+			PI = 0;
+			PD = 0;
 			
 			/* Regler-part */
 			u = temp_KP*(e + PI + PD);
@@ -126,7 +135,7 @@ void controll_front(int left, int right){
 }
 
 /* Update the duty cycles for the fans. */
-void update_fan_cycle(int duty_cycle, int activeFan){
+void update_fan_cycle(int duty_cycle, int active_Fan){
 	
 	/* Make sure the duty_cycle doesn't exceed or go below the possible range */
 	if(duty_cycle>999)
@@ -137,7 +146,7 @@ void update_fan_cycle(int duty_cycle, int activeFan){
 	{
 		duty_cycle = 0;
 	}
-	if(activeFan==rightFan)
+	if(active_Fan==rightFan)
 	{
 		update_duty_cycle_36(duty_cycle);
 		update_duty_cycle_DAC1(standby_cycle);
@@ -148,6 +157,5 @@ void update_fan_cycle(int duty_cycle, int activeFan){
 		update_duty_cycle_DAC1(duty_cycle);
 	}
 	
-	printf("Duty cycle:%d",duty_cycle);
 	
 }

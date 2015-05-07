@@ -11,6 +11,7 @@
 #include "pwm_controller.h"
 #include "test/unity.h"
 #include "semaphores.h"
+#include "values.h"
 extern void test_duty_cycle_36(void);
 extern void test_duty_cycle_38(void);
 extern void test_duty_cycle_40(void);
@@ -56,6 +57,17 @@ void start_communication(void *p)
 		printf("Duty cycle 38: %d\n\r",duty_cycle_38_temp);
 		printf("Duty cycle 40: %d\n\r",duty_cycle_40_temp);
 		printf("Duty cycle 9: %d\n\r",duty_cycle_9_temp);
+		
+		xSemaphoreTake(semaphore_adc_values,portMAX_DELAY); // Take semaphore
+		int adc_value_back_left_temp = adc_value_back_left;
+		int adc_value_back_right_temp = adc_value_back_right;
+		int adc_value_front_left_temp = adc_value_front_left;
+		int adc_value_front_right_temp = adc_value_front_right;
+		xSemaphoreGive(semaphore_adc_values); // Give back the semaphore
+		printf("AD FRONT_LEFT: %d\n\r",adc_value_front_left_temp);
+		printf("AD FRONT_RIGHT: %d\n\r",adc_value_front_right_temp);
+		printf("AD BACK_LEFT: %d\n\r",adc_value_back_left_temp);
+		printf("AD BACK_RIGHT: %d\n\r",adc_value_back_right_temp);
 		
  		vTaskDelayUntil(&xLastWakeTime,COMMUNICATION_SCHEDULE_TIME);
  	}

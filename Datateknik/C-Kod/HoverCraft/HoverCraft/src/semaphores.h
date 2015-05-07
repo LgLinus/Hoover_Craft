@@ -12,6 +12,7 @@
 #define SEMAPHORES_H_
 
 extern xSemaphoreHandle semahpore_duty_cycles;
+extern xSemaphoreHandle semaphore_adc_values;
 
 
 

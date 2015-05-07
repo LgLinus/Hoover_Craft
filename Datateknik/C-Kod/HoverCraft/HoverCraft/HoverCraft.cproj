@@ -521,6 +521,9 @@
     <Folder Include="src\test" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\values.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\values.h">
       <SubType>compile</SubType>
     </Compile>

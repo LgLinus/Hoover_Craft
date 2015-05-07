@@ -56,8 +56,8 @@ void update_duty_cycle_40(uint32_t);
 void update_duty_cycle_9(uint32_t);
 
 /* Duty_cycles */
-extern int duty_cycle_DAC1;
-extern int duty_cycle_36;
-extern int duty_cycle_38;
-extern int duty_cycle_40;
-extern int duty_cycle_9;
+int duty_cycle_DAC1;
+int duty_cycle_36;
+int duty_cycle_38;
+int duty_cycle_40;
+int duty_cycle_9;

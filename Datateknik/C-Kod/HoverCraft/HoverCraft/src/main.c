@@ -19,6 +19,7 @@ void init_pwm(void);
 void init_sempahores(void);
 
 xSemaphoreHandle semahpore_duty_cycles = 0;
+xSemaphoreHandle semaphore_adc_values = 0;
 
 /* Configure console UART.*/
 static void configure_console(void)
@@ -88,5 +89,6 @@ void init_tasks(void)
 
 void init_sempahores(void)
 {
-	vSemaphoreCreateBinary(semahpore_duty_cycles);	
+	vSemaphoreCreateBinary(semahpore_duty_cycles);
+	vSemaphoreCreateBinary(semaphore_adc_values);
 }

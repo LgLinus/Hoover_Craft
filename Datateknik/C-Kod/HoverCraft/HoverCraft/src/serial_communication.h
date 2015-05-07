@@ -9,7 +9,7 @@
 #ifndef SERIAL_COMMUNICATOIN_H_
 #define SERIAL_COMMUNICATOIN_H_
 
-#define COMMUNICATION_SCHEDULE_TIME 1000
+#define COMMUNICATION_SCHEDULE_TIME 5000
 
 void start_communication(void *);
 

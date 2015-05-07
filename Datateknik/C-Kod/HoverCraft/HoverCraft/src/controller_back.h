@@ -9,8 +9,9 @@
 #ifndef CONTROLLER_BACK_H_
 #define CONTROLLER_BACK_H_
 
-void update_fan_cycle(int duty_cycle, int active_fan);
+void update_fan_cycle_back(int duty_cycle, int active_fan);
 void controll_back(int,int);
+void start_controller_back(void *);
 
 #define CONTROLLER_SCHEDULE_TIME 500
 #define KP 1

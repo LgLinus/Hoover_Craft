@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\values.c
+
 src\adc_functions.c
 
 src\ASF\common\services\serial\usart_serial.c

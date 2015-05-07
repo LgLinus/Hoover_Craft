@@ -152,7 +152,7 @@ src/serial_communication.d src/serial_communication.o: \
  u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/setjmp.h \
  u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/machine/setjmp.h \
  u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/include-fixed/limits.h \
- ../src/semaphores.h
+ ../src/semaphores.h ../src/values.h
 
 ../src/asf.h:
 
@@ -477,3 +477,5 @@ u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolc
 u:\installedapps\atmel\atmel\ toolchain\arm\ gcc\native\4.7.3.1029\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/include-fixed/limits.h:
 
 ../src/semaphores.h:
+
+../src/values.h:
