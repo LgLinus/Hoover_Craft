@@ -6,6 +6,7 @@
  * Created: 2015-05-04 14:13:42
  *  Author: Linus Granath
  */ 
+
 #include <asf.h>
 #include "controller_back.h"
 #include "values.h"
@@ -30,13 +31,14 @@ void start_controller_back(void *p)
 	portTickType xLastWakeTime;
 	xLastWakeTime = xTaskGetTickCount(); //Retrieve the startup tick timer
 	
-	int i;
-	i = 0;
-	
+
 	/* Simple infinite loop, printing text with a given delay */
 	while(1)
 	{
 		adc_start(ADC);
+		
+		// Wait for the end of conversion, check if data is ready
+		while ((adc_get_status(ADC) & ADC_ISR_DRDY) != ADC_ISR_DRDY);
 
 		int back_left_inductor;
 		back_left_inductor = ADC->ADC_CDR[6]; // Retrieve latest vaule from back left inductor
@@ -144,6 +146,8 @@ void start_controller_back(void *p)
  	{
  		duty_cycle = 0;
  	}
+	
+	/* Activate the correct fan */
  	if(activeFan==rightFan)
  	{
  		update_duty_cycle_40(duty_cycle);

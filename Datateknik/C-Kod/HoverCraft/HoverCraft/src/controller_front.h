@@ -14,7 +14,7 @@ void update_fan_cycle(int duty_cycle, int active_fan);
 void controll_front(int,int);
 
 #define CONTROLLER_SCHEDULE_TIME 500
-#define KP 1
+#define KP 100
 #define TI 1
 #define TD 0.1
 #endif /* CONTROLLER_FRONT_H_ */

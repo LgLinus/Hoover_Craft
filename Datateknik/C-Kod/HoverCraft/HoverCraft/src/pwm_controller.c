@@ -1,6 +1,8 @@
 /*
  * pwmInit.c
  *
+ * File responsible of initializing the PWM signals
+ *
  * Created: 2015-03-19 11:27:54
  *  Author: Jesper Hansen & Andrée Höög
  */

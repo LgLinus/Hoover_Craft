@@ -6,6 +6,7 @@
  * Created: 2015-05-05 11:00:00
  *  Author: Linus Granath
  */ 
+
 #include <asf.h>
 #include "controller_front.h"
 #include "values.h"
@@ -30,14 +31,15 @@ void start_controller_front(void *p)
  	portTickType xLastWakeTime;
 	xLastWakeTime = xTaskGetTickCount(); //Retrieve the startup tick timer
 	
- 	int i;
-	i = 0;
-	
 	/* Simple infinite loop, printing text with a given delay */
  	while(1)
 	 {
+		//ioport_set_pin_level(PIO_PD1_IDX,HIGH);
 		adc_start(ADC);
 
+		// Wait for the end of conversion, check if data is ready
+		while ((adc_get_status(ADC) & ADC_ISR_DRDY) != ADC_ISR_DRDY);
+		
 		int front_left_inductor;
 		front_left_inductor = ADC->ADC_CDR[4];
 		int front_right_inductor;

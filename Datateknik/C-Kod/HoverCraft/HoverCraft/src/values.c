@@ -1,6 +1,8 @@
 /*
  * values.c
  *
+ *	File used to store variables used by mutliple files
+ *
  * Created: 2015-05-07 13:52:03
  *  Author: ad2302
  */ 

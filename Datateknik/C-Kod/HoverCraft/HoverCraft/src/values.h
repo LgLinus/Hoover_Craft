@@ -18,7 +18,7 @@
 #define rightFan 1
 #define d_buffer 2
 int adc_value_front_left;
-int adc_value_front_right;
+extern int adc_value_front_right;
 int adc_value_back_left;
 int adc_value_back_right;
 
