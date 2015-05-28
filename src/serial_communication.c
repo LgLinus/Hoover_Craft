@@ -41,6 +41,7 @@ void start_communication(void *p)
 		xSemaphoreGive(semahpore_duty_cycles); // Give back the semaphore
 		
 		xSemaphoreTake(semaphore_adc_values,portMAX_DELAY); // Take semaphore
+		
 		/* Store the adc values temporarily in this file */
 		int adc_value_back_left_temp;
 		adc_value_back_left_temp = adc_value_back_left;

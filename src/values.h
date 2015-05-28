@@ -44,4 +44,5 @@ int voltage_to_distance(int,int);
 int filter(int,int);
 int iir_filter(int,int);
 int get_table(int);
+void calibrate(void);
 #endif /* VALUES_H_ */

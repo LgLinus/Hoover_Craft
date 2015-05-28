@@ -20,6 +20,7 @@ void reset_fan(void *p)
 	
 	while (1)
 	{
+		/* Shut down and power up again if outside of the track */
 		if ((distance_left_temp == 120 && distance_right_temp >= 10) || (distance_left_temp >= 10 && distance_right_temp == 120))
 		{
 			update_duty_cycle_9(0);

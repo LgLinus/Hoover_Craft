@@ -23,7 +23,6 @@ void init_tasks(void);
 void init_pwm(void);
 void init_code_pins(void);
 void init_sempahores(void);
-void calibrate(void);
 void test_calibrate(void);
 void set_state(int);
 void test_voltage_to_distance(void);
@@ -88,32 +87,15 @@ void set_state(int state){
 			update_duty_cycle_8(999);
 			break;
 		case STAND_STILL:
-		update_duty_cycle_36(standby_torque);
-		update_duty_cycle_38(standby_torque);
-		update_duty_cycle_40(standby_cycle);
-		update_duty_cycle_DAC1(standby_cycle);
-		delay_ms(5000);
-		break;
+			update_duty_cycle_36(standby_torque);
+			update_duty_cycle_38(standby_torque);
+			update_duty_cycle_40(standby_cycle);
+			update_duty_cycle_DAC1(standby_cycle);
+			delay_ms(5000);
+			break;
 	}
 }
-/* Select which table to use depending on current */
-void calibrate(void){
-	int i,val;
-	i = 0;
-	val = 0;
-	/* Retrieve 1000 sample values, takes approximately 1 second */
-	while(i<1000)
-	{
-		adc_start(ADC);
-		val += ADC->ADC_CDR[3];
-		i++;
-		delay_ms(1);
-	}
-	val = val/i; // Calculate average
-	get_table(val);
-	val = 0;
-	i = 0;
-}
+
 
 /* Initialize pwm */
 void init_pwm(void)
@@ -160,6 +142,8 @@ void init_tasks(void)
 	vTaskStartScheduler(); // Start the tasks
 }
 
+
+
 /* Initialize the semaphores */
 void init_sempahores(void)
 {
@@ -178,8 +162,6 @@ void test_calibrate(void){
 
 /* Test the calibration */
 void test_voltage_to_distance(void){
-	int i = -5;
-	printf("VAL: %d",abs(i));
 	// Unity Test
 	UnityBegin("test/test_voltage_converter.c");
 	RUN_TEST(test_voltage_converter, 12);

@@ -88,9 +88,6 @@ void controll_front_dead_beat(int left, int right){
 	double d0,d1,koffs;
 	
 	koffs = 0.0084*6;
-	// Dead beat
-	// 	d0 = 2/(koffs);
-	// 	d1 = -(1/(koffs));
 		
 	// Double pool
 	d0 = 1/(koffs);

@@ -123,19 +123,38 @@ int iir_filter(int invalue, int inductor)
 	return (int)temp;
 }
 
-/* Select which voltage to distance table to used, used for calibration */
-//int get_table(int val){
-//for(int i = 0;i<VOLTAGE_TO_DISTANCE_AMMOUNT;i++){
-//if (i==VOLTAGE_TO_DISTANCE_AMMOUNT-1)
-//{
-//table = i;
-//break;
-//}
-///* Check which value the average sampled value is closest to in the tables */
-//else if((abs(val-voltage_to_distance_table[i][0][12]))<(abs(val-voltage_to_distance_table[i+1][0][12]))){
-//table = i;
-//break;
-//}
-//}
-//return table;
-//}
+
+/* Select which table to use depending on current in the line */
+void calibrate(void){
+	int i,val;
+	i = 0;
+	val = 0;
+	/* Retrieve 1000 sample values, takes approximately 1 second */
+	while(i<1000)
+	{
+		adc_start(ADC);
+		val += ADC->ADC_CDR[3];
+		i++;
+		delay_ms(1);
+	}
+	val = val/i; // Calculate average
+	get_table(val);
+	val = 0;
+	i = 0;
+}
+/* Select which voltage to distance table to used, used for calibration, return value used in test */
+int get_table(int val){
+for(int i = 0;i<VOLTAGE_TO_DISTANCE_AMMOUNT;i++){
+if (i==VOLTAGE_TO_DISTANCE_AMMOUNT-1)
+{
+table = i;
+break;
+}
+/* Check which value the average sampled value is closest to in the tables */
+else if((abs(val-voltage_to_distance_table[i][0][12]))<(abs(val-voltage_to_distance_table[i+1][0][12]))){
+table = i;
+break;
+}
+}
+return table;
+}
